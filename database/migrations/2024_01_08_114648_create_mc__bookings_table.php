@@ -30,9 +30,9 @@ return new class extends Migration
             $table->tinyInteger('b_leadstatus')->nullable()->comment('0=Booking, 1=Follow Up, 2=Penawaran, 3=Cancel, 4=Deal, 5=Paid, 6=Agreement, 7=House Rules');
             $table->text('v_notesleadstatus');
             $table->tinyInteger('b_membershipstatus')->default(0)->nullable()->comment('1=Member, 2=Non-Member');
-            $table->string('v_createdby', 50);
-            $table->string('v_updatedby', 50);
-            $table->string('v_deletedby', 50);
+            $table->string('v_createdby', 50)->nullable();
+            $table->string('v_updatedby', 50)->nullable();
+            $table->string('v_deletedby', 50)->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->tinyInteger('b_status')->nullable()->default(1)->comment('1=Active, 0=Inactive');

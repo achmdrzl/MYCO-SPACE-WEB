@@ -12,7 +12,7 @@
     @section('content')
         <!-- section begin -->
         <section id="subheader" class="text-light"
-            data-bgimage="url({{ asset('frontoffice/assets/images/background/subheader-3a.jpg') }}) top">
+            data-bgimage="url({{ asset('frontoffice/assets/images/background/subheader-f.jpg') }}) top">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -31,7 +31,7 @@
         <section aria-label="section">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-5">
                         <img src="{{ asset('frontoffice/assets/images/misc/images-set-3-a.png') }}" class="img-fluid"
                             alt="#">
                     </div>
@@ -73,9 +73,7 @@
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center">
                         <h3>We're proud to list some of the world's most mind-blowing spaces.</h3>
-                        <p>Lorem ipsum ea ut magna nisi amet reprehenderit eu adipisicing nisi incididunt est sint fugiat
-                            deserunt tempor ea culpa nostrud commodo deserunt et do ullamco non tempor veniam id culpa
-                            mollit veniam.</p>
+                        <p class="w-100">Enriches the work experience by providing access to a flexible and collaborative environment. With these facilities, innovation and creativity naturally flourish, enabling a dynamic exchange of ideas. Create inclusive communities, strengthen professional networks, and facilitate business growth through easy and open collaboration</p>
                     </div>
                     <div class="spacer-10"></div>
                     <div class="col-md-12">
@@ -84,15 +82,15 @@
                             <!-- Slides -->
                             <div class="carousel-inner mb-5">
                                 <div class="carousel-item active">
-                                    <img src="{{ asset('frontoffice/assets/images/misc/is-1.jpg') }}" class="d-block w-100"
+                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/cw/2b.jpg') }}" class="d-block w-100"
                                         alt="" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{ asset('frontoffice/assets/images/misc/is-2.jpg') }}" class="d-block w-100"
+                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/indragiri/1b.jpg') }}" class="d-block w-100"
                                         alt="" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{ asset('frontoffice/assets/images/misc/is-3.jpg') }}" class="d-block w-100"
+                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/trilium/3b.jpg') }}" class="d-block w-100"
                                         alt="" />
                                 </div>
                             </div>
@@ -116,27 +114,17 @@
                                 <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="0"
                                     class="active" aria-current="true" aria-label="Slide 1" style="width: 100px;">
                                     <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/misc/is-1.jpg') }}" alt="" />
+                                        src="{{ asset('frontoffice/assets/images/location-details-slider/cw/2b.jpg') }}" alt="" />
                                 </button>
                                 <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1"
                                     aria-label="Slide 2" style="width: 100px;">
                                     <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/misc/is-2.jpg') }}" alt="" />
+                                        src="{{ asset('frontoffice/assets/images/location-details-slider/indragiri/1b.jpg') }}" alt="" />
                                 </button>
                                 <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2"
                                     aria-label="Slide 3" style="width: 100px;">
                                     <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/misc/is-3.jpg') }}" alt="" />
-                                </button>
-                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2"
-                                    aria-label="Slide 3" style="width: 100px;">
-                                    <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/misc/is-3.jpg') }}" alt="" />
-                                </button>
-                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2"
-                                    aria-label="Slide 3" style="width: 100px;">
-                                    <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/misc/is-3.jpg') }}" alt="" />
+                                        src="{{ asset('frontoffice/assets/images/location-details-slider/trilium/3b.jpg') }}" alt="" />
                                 </button>
                             </div>
                             <!-- Thumbnails -->

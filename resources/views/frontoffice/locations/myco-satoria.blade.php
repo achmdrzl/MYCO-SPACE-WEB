@@ -33,6 +33,17 @@
             margin-left: 30px;
             /* Atur indent tambahan untuk baris pertama */
         }
+        @media (max-width: 767px) {
+            .de-price span {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .de-title {
+                font-size: 16px;
+            }
+        }
     </style>
 @endpush
 
@@ -101,28 +112,28 @@
                             <div class="row" style="font-size:15px;">
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2 mt-2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Pantry"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/pantry.png') }}"
                                             alt=""
                                             style="width: 70%; margin-top:-10px;"></span><strong>Pantry</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2 mt-2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Free-flow Beverage"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/free-flow-beverage.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Free-flow
                                         Beverage</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2 mt-2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="High Speed"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/high-speed-connection.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>High Speed
                                         Internet</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2 mt-2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Access 24 Hours"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/24-hour.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Access 24
                                         Hours</strong>
@@ -138,7 +149,7 @@
                             <div class="col-lg-12 mb25">
                                 <a href="{{ route('manage.office') }}" class="de-card">
                                     <div class="text">
-                                        <h4>Manage Office</h4>
+                                        <h4 class="de-title">Manage Office</h4>
                                         <p>Ruang kerja on-demand yang luas di desain khusus sesuai kebutuhan perusahaan
                                             Anda, kini Anda bisa fokus pada perkembangan bisnis Anda dan biarkan kami
                                             support dengan mengelola fasilitas di kantor Anda. Cocok untuk perusahaan skala
@@ -226,7 +237,8 @@
                     <div id="sidebar" class="col-lg-4">
                         <div class="de-box de-location-address">
                             <h3>Location Address</h3>
-                            <div>Jl. Pradah Jaya I No.1,<br>Pradahkalikendal, Kec. Dukuhpakis,<br>Kota Surabaya, Jawa Timur 60226
+                            <div>Jl. Pradah Jaya I No.1,<br>Pradahkalikendal, Kec. Dukuhpakis,<br>Kota Surabaya, Jawa Timur
+                                60226
                             </div>
                             <div>+6289633299494</div>
                         </div>

@@ -38,7 +38,7 @@
     @section('content')
         <!-- section begin -->
         <section id="subheader" class="text-light"
-            data-bgimage="url({{ asset('frontoffice/assets/images/background/subheader-b.jpg') }}) top">
+            data-bgimage="url({{ asset('frontoffice/assets/images/background/subheader-c.jpg') }}) top">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -195,8 +195,8 @@
                                     </a>
                                 </span>
                                 <span>
-                                    <a href="https://api.whatsapp.com/send/?phone=6285808756528&text=Hallo+admin+MYCO+Ciputra+World....&type=phone_number&app_absent=0"
-                                        style="color: #000">
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=6285808756528&text=Hallo+admin+MYCO+Ciputra+World....&type=phone_number&app_absent=0">
                                         <i class="id-color fa fa-phone fa-lg"></i>+6285808756528
                                     </a>
                                 </span>
@@ -216,14 +216,14 @@
                                     </a>
                                 </span>
                                 <span>
-                                    <a href="https://api.whatsapp.com/send/?phone=6287766523711&text=Hallo+admin+MYCO+Trillium....&type=phone_number&app_absent=0"
-                                        style="color: #000">
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=6287766523711&text=Hallo+admin+MYCO+Trillium....&type=phone_number&app_absent=0">
                                         <i class="id-color fa fa-phone fa-lg"></i>+6287766523711
                                     </a>
                                 </span>
                                 <span>
                                     <i class="id-color fa fa-envelope-o fa-lg"></i><a
-                                        href="mailto:Trilium.tower@my-co.space">Trilium.tower@my-co.space</a>
+                                        href="mailto:Trillium.tower@my-co.space">Trillium.tower@my-co.space</a>
                                 </span>
                             </address>
                         </div>
@@ -237,7 +237,8 @@
                                     </a>
                                 </span>
                                 <span>
-                                    <a href="#" style="color: #000">
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=6289633299494&text=Hallo+admin+MYCO+Indragiri....&type=phone_number&app_absent=0">
                                         <i class="id-color fa fa-phone fa-lg"></i>+6289633299494
                                     </a>
                                 </span>
@@ -258,7 +259,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center">
-                            <h2>Frequently Asked Question.</h2>
+                            <h1>Frequently Asked Question.</h1>
                             <div class="small-border bg-color-2"></div>
                         </div>
                     </div>
@@ -268,7 +269,7 @@
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#one" aria-expanded="false" aria-controls="one">
-                                        MyCo berada di kota mana saja?
+                                        Dimanakah letak lokasi myco saat ini ?
                                     </button>
                                 </h2>
                                 <div id="one" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
@@ -280,7 +281,8 @@
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#two" aria-expanded="false" aria-controls="two">
-                                        Apakah sebelum menggunakan seluruh layanan di Myco harus booking terlebih dahulu?
+                                        Apakah saya harus melakukan booking dahulu sebelum menggunakan seluruh layanan di
+                                        MyCo ?
                                     </button>
                                 </h2>
                                 <div id="two" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
@@ -294,12 +296,26 @@
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#three" aria-expanded="false" aria-controls="three">
-                                        Apakah boleh membawa makanan dan minuman dari luar?
+                                        Apakah saya boleh membawa makanan dan minuman dari luar MyCo ?
                                     </button>
                                 </h2>
                                 <div id="three" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">Diperbolehkan dengan batas kuantitas yang sewajarnya </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#four" aria-expanded="false" aria-controls="four">
+                                        Jika saya ingin visit ke lokasi myco, apakah saya boleh langsung ke lokasi atau
+                                        melakukan perjanjian terlebih dahulu?
+                                    </button>
+                                </h2>
+                                <div id="four" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Kami anjurkan sebelum visit untuk melakukan janjian
+                                        terlebih dahulu dan dapat menghubungi kontak admin cabang yang ingin dituju. </div>
                                 </div>
                             </div>
                         </div>

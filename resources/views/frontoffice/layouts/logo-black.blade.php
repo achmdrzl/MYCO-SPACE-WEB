@@ -6,8 +6,8 @@
 
         h2 {
             font-size: 25px;
-            margin-top: 20px;
             color: #333333;
+            margin-top: -5px;
             /* Set your default font color for mobile */
             transition: color 0.3s ease;
             /* Add a smooth transition effect */
@@ -18,6 +18,17 @@
                 font-size: 36px;
                 margin-top: 25px;
                 color: #333;
+                /* Set your default font color for larger screens */
+            }
+        }
+
+        .btn-book {
+            margin-top: -20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .btn-book {
+                margin-top: 5px;
                 /* Set your default font color for larger screens */
             }
         }

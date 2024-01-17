@@ -33,6 +33,24 @@
             margin-left: 30px;
             /* Atur indent tambahan untuk baris pertama */
         }
+
+        @media (max-width: 767px) {
+            .de-price span {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .de-title {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            table th {
+                font-size: 12px;
+            }
+        }
     </style>
 @endpush
 
@@ -82,7 +100,7 @@
                                     alt="">
                             </div>
                             <div class="item">
-                                <img src="{{ asset('frontoffice/assets/images/location-details-slider/cw/9.jpg') }}"
+                                <img src="{{ asset('frontoffice/assets/images/location-details-slider/cw/9a.jpg') }}"
                                     alt="">
                             </div>
                         </div>
@@ -108,84 +126,84 @@
                             <div class="row" style="font-size:15px;">
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Receptionist"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/receptionist.png') }}"
                                             alt=""
                                             style="width: 70%; margin-top:-10px;"></span><strong>Receptionist</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Pantry"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/pantry.png') }}"
                                             alt=""
                                             style="width: 70%; margin-top:-10px;"></span><strong>Pantry</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Meeting Room"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/meeting-room.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Meeting
                                         Room</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Free-flow Beverage"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/free-flow-beverage.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Free-flow
                                         Beverage</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Printing Assist"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/printing-assist.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Printing
                                         Assist</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Connecting Board"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/connecting-board.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Connecting
                                         Board</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Musholla"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/musholla.png') }}"
                                             alt=""
                                             style="width: 70%; margin-top:-10px;"></span><strong>Musholla</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="General Cleaning"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/general-cleaning.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>General
                                         Cleaning</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="High Speed Internet"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/high-speed-connection.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>High Speed
                                         Internet</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Incoming Call Management"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/incoming-call-management.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Incoming
                                         Call Management</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Locker"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/locker.png') }}"
                                             alt=""
                                             style="width: 70%; margin-top:-10px;"></span><strong>Locker</strong>
                                 </div>
                                 <div class="col-md-4 col-lg-6 demo-icon-wrap-s2 mt-2">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Access 24 Hours"><img
+                                        title=""><img
                                             src="{{ asset('frontoffice/assets/images/facilities/24-hour.png') }}"
                                             alt="" style="width: 70%; margin-top:-10px;"></span><strong>Access 24
                                         Hours</strong>
@@ -201,7 +219,7 @@
                             <div class="col-lg-12 mb25">
                                 <a href="{{ route('private.office') }}" class="de-card">
                                     <div class="text">
-                                        <h4>Private Office</h4>
+                                        <h4 class="de-title">Private Office</h4>
                                         <p>Ruangan kantor yang siap pakai, luas dan full furnished untuk mendukung
                                             kebutuhan perusahaan Anda. Tersedia dalam ukuran ruangan yang kecil dan besar.
                                         </p>
@@ -221,7 +239,7 @@
                             <div class="col-lg-12 mb25">
                                 <a href="{{ route('virtual.office') }}" class="de-card">
                                     <div class="text">
-                                        <h4>Virtual Office</h4>
+                                        <h4 class="de-title">Virtual Office</h4>
                                         <p>Alamat surat menyurat dengan lokasi strategis untuk perusahaan Anda tanpa perlu
                                             memiliki bangunan fisik.</p>
                                         <ul class="list s1 indented-list-2">
@@ -235,7 +253,7 @@
                                             <li>Quota Print/Scan/Fotocopy</li>
                                         </ul>
                                         <div class="de-price">
-                                            <span style="font-size: 13px;">Start from 4.500.000</span>
+                                            <span>4.500.000/year</span>
                                         </div>
                                     </div>
                                 </a>
@@ -250,7 +268,7 @@
                             <div class="col-lg-12 mb25">
                                 <a href="{{ route('hot.desk') }}" class="de-card">
                                     <div class="text">
-                                        <h4>Hot Desk</h4>
+                                        <h4 class="de-title">Hot Desk</h4>
                                         <p>Coworking space harian untuk Anda mengerjakan tugas, bekerja dan berkembang dalam
                                             komunitas. Cocok bagi Anda yang membutuhkan tempat yang nyaman untuk
                                             menyelesaikan tugas dan pekerjaan.</p>
@@ -262,7 +280,41 @@
                                             <li>Phone Booth Access</li>
                                         </ul>
                                         <div class="de-price">
-                                            <span>Start from 35.000</span>
+                                            {{-- <span>Start from 35.000</span> --}}
+                                        </div>
+                                        <h4 class="de-title">Our Packages</h4>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                {{-- <thead>
+                                                    <tr>
+                                                        <th class="center-align" style="font-size: 20px;">PACKAGE</th>
+                                                        <th class="bronze center-align">PRICE</th>
+                                                    </tr>
+                                                </thead> --}}
+                                               <tbody>
+                                                    <tr>
+                                                        <th><span class="">Hot Desk Student</span></th>
+                                                        <th class="center-align">50.0000 / day</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><span class="">Hot Desk 4 Hour</span></th>
+                                                        <th class="center-align">50.0000 / 4 hour</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><span class="">Hot Desk Daily</span></th>
+                                                        <th class="center-align">65.0000 / day</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><span class="">Hot Desk Monthly</span></th>
+                                                        <th class="center-align">750.0000 / month</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><span class="">Hot Desk Private</span></th>
+                                                        <th class="center-align">150.000 / day</th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </a>
@@ -288,7 +340,7 @@
                             <div class="col-lg-12 mb25">
                                 <a href="{{ route('meeting.room') }}" class="de-card">
                                     <div class="text">
-                                        <h4>Meeting Room</h4>
+                                        <h4 class="de-title">Meeting Room</h4>
                                         <p>Ruang meeting yang layak dan cozy merupakan salah satu kunci kesuksesan pertemuan
                                             Anda dengan client, presentasi proposal, dan dealing secara profesional.
                                             Fokuslah pada meeting penting Anda dan biarkan kami yang support ruang meeting
@@ -301,7 +353,7 @@
                                             <li>Phone Booth Access</li>
                                         </ul>
                                         <div class="de-price">
-                                            <span>150.000/Hour</span>
+                                            <span>150.000/hour</span>
                                         </div>
                                     </div>
                                 </a>
@@ -309,7 +361,7 @@
                             <div class="col-lg-12 mb25">
                                 <a href="{{ route('podcast.index') }}" class="de-card">
                                     <div class="text">
-                                        <h4>Podcast Room</h4>
+                                        <h4 class="de-title">Podcast Room</h4>
                                         <p>Audience sangat ingin mendapatkan konten yang berkualitas dari Anda dan ruang
                                             podcast eksklusif kami lengkap dengan peralatan podcast untuk membantu
                                             mewujudkannya.</p>
@@ -319,7 +371,7 @@
                                             <li>Phone Booth Access</li>
                                         </ul>
                                         <div class="de-price">
-                                            <span>200.000/Hour</span>
+                                            <span>200.000/hour</span>
                                         </div>
                                     </div>
                                 </a>
@@ -327,7 +379,7 @@
                             <div class="col-lg-12 mb25">
                                 <a href="{{ route('studio.index') }}" class="de-card">
                                     <div class="text">
-                                        <h4>Studio Room</h4>
+                                        <h4 class="de-title">Studio Room</h4>
                                         <p>Ruangan kedap suara dan di design untuk penggunaan pribadi bagi para content
                                             creator dan youtuber seperti Anda karena kami paham bahwa konten yang
                                             berkualitas merupakan hal yang mendasar.</p>
@@ -339,7 +391,7 @@
                                             <li>Phone Booth Access</li>
                                         </ul>
                                         <div class="de-price">
-                                            <span>200.000/Day</span>
+                                            <span>200.000/day</span>
                                         </div>
                                     </div>
                                 </a>

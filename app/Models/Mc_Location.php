@@ -9,7 +9,7 @@ class Mc_Location extends Model
 {
     use HasFactory;
 
-    protected $table = 'mc_location';
+    protected $table = 'mc_locations';
 
     protected $primaryKey = 'location_id';
 
@@ -23,8 +23,8 @@ class Mc_Location extends Model
         'v_deletedby',
     ];
 
-    public function booking()
+    public function bookings()
     {
-        return $this->belongsTo(Mc_Booking::class, 'v_location');
+        return $this->hasMany(Mc_Booking::class, 'v_location', 'v_code');
     }
 }

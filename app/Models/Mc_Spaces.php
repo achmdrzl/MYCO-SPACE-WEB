@@ -9,7 +9,7 @@ class Mc_Spaces extends Model
 {
     use HasFactory;
 
-    protected $table = 'mc_space';
+    protected $table = 'mc_spaces';
 
     protected $primaryKey = 'space_id';
 
@@ -30,5 +30,10 @@ class Mc_Spaces extends Model
     public function member()
     {
         return $this->hasOne(Mc_Company::class, 'v_location');
+    }
+
+    public function bookings()
+    {
+        return $this->hasMany(Mc_Booking::class, 'v_spaces', 'v_code');
     }
 }

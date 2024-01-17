@@ -26,8 +26,7 @@
                             Elevate Your Workspace: Exceptional Work Environments at 4 Prime Locations in Surabaya,
                             Indonesia. Experience Excellence at MyCo Space.</p>
                         <div class="spacer-10"></div>
-                        <a class="btn-main wow fadeInUp lead" type="button" data-bs-toggle="modal"
-                            data-bs-target="#bookingModal" data-wow-delay="1.25s">Booking Now!</a>
+                        <a class="btn-main wow fadeInUp lead" type="button" id="addBooking" data-wow-delay="1.25s">Booking Now!</a>
                         <div class="spacer-single"></div>
                         <div class="row">
                             <div class="col-lg-3 col-md-6 col-sm-4 wow fadeInRight mb30" data-wow-delay="1.1s">
@@ -60,33 +59,246 @@
         <section>
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
-                    {{-- <div class="col-lg-12">
-                        <div class="text-center">
-                            <h2>Our Partnership</h2>
-                            <div class="small-border bg-color-2"></div>
-                        </div>
-                    </div> --}}
                     <div class="col-lg-12 col-md-12">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"
+                        <div id="carouselExampleSlidesOnly" class="carousel slide d-block mx-auto" data-bs-ride="carousel"
                             data-bs-interval="2000">
-                            <div class="carousel-inner " style="margin: auto;">
+                            <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <div class="row ">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/ANTERAJA.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/ASIANET.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/CVEKAWAHYUSEJAHTERA.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Repeat similar structure for other columns -->
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/FASHIONWISEVENUE.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/IMEJI.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/KlikA2C.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Repeat similar structure for other columns -->
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/KOINWORKS.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/LIVETOLEARN.png') }}"
+                                                        alt="" style="width: 100%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/MAIMAID.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Repeat similar structure for other columns -->
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/MAXY.png') }}"
+                                                        alt="" style="width: 60%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/NIRANKARA.png') }}"
+                                                        alt="" style="width: 100%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/OTOHUB.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Repeat similar structure for other columns -->
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/PAWSOME.png') }}"
+                                                        alt="" style="width: 100%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/PRISNTITUTE.png') }}"
+                                                        alt="" style="width: 100%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/PRUDENTIAL.png') }}"
+                                                        alt="" style="width: 100%;"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Repeat similar structure for other columns -->
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/ALTACONSULTING.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/RISE.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/SAVETHECHILDREN.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Repeat similar structure for other columns -->
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/SHELL.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/StudioTigaDinding.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="text-center">
+                                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title=""><img
+                                                        src="{{ asset('frontoffice/assets/images/logo-tenant/ALPLUS.png') }}"
+                                                        alt="" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <!-- Repeat similar structure for other columns -->
+                                    </div>
+                                </div>
+                                <!-- Repeat similar structure for other carousel items -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        {{-- <section>
+            <div class="container">
+                <div class="row align-items-center justify-content-center text-center">
+                    <div class="col-lg-12 col-md-12">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide d-block mx-auto" data-bs-ride="carousel"
+                            data-bs-interval="2000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row g-4">
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="ANTERAJA"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/ANTERAJA.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="ASIA NET"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/ASIANET.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="CV EKA WAHYU SEJAHTERA"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/CVEKAWAHYUSEJAHTERA.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
@@ -96,19 +308,19 @@
                                     <div class="row ">
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="FASHION WISE VENUE"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/FASHIONWISEVENUE.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="IMEJI"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/IMEJI.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="KLIKA2C"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/KlikA2C.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
@@ -118,19 +330,19 @@
                                     <div class="row ">
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="KOINWORKS"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/KOINWORKS.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="LIVE TO LEARN"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/LIVETOLEARN.png') }}"
                                                     alt="" style="width: 100%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="MAIMAID"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/MAIMAID.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
@@ -140,19 +352,19 @@
                                     <div class="row ">
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="MAXY ACADEMY"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/MAXY.png') }}"
                                                     alt="" style="width: 60%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="NIRANKARA"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/NIRANKARA.png') }}"
                                                     alt="" style="width: 100%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="PT OTO HUB INDONESIA"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/OTOHUB.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
@@ -162,19 +374,19 @@
                                     <div class="row ">
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="PAWSOME LIVING"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/PAWSOME.png') }}"
                                                     alt="" style="width: 100%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="PR INSTITE"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/PRISNTITUTE.png') }}"
                                                     alt="" style="width: 100%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="PRUDENTIAL"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/PRUDENTIAL.png') }}"
                                                     alt="" style="width: 100%;"></span>
                                         </div>
@@ -184,19 +396,19 @@
                                     <div class="row ">
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="ALTA CONSULTING"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/ALTACONSULTING.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="RISE"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/RISE.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="SAVE THE CHILDREN"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/SAVETHECHILDREN.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
@@ -206,19 +418,19 @@
                                     <div class="row ">
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="SHELL"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/SHELL.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="STUDIO TIGA DINDING"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/StudioTigaDinding.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="AL PLUS"><img
+                                                title=""><img
                                                     src="{{ asset('frontoffice/assets/images/logo-tenant/ALPLUS.png') }}"
                                                     alt="" style="width: 80%;"></span>
                                         </div>
@@ -229,7 +441,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
+
+
 
         {{-- <section id="section-intro">
             <div class="container">
@@ -347,26 +561,28 @@
                 </div>
             </div>
         </section> --}}
-        <div class="container" style="margin-bottom: 80px;"></div>
+        <div class="container" style="margin-bottom: 120px;"></div>
 
         <section id="section-why-choose-us" class="no-top">
             <div class="container-fluid">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-12">
                         <div class="text-center">
-                            <h2>Why Choose Us?</h2>
+                            <h1>Why Choose Us?</h1>
                             <div class="small-border bg-color-2"></div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6 col-sm-12">
                         <div class="mb30">
                             <div class="top text-center">
-                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="Prime Location"><img
-                                        src="{{ asset('frontoffice/assets/images/why-choose-us/prime-location.png') }}"
-                                        alt="" style="width: 70%; margin-top:-14px;"></span>
-                                <h4>Prime Location</h4>
+                                <div class="col-lg-12">
+                                    <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=""><img
+                                            src="{{ asset('frontoffice/assets/images/why-choose-us/prime-location.png') }}"
+                                            alt="" style="width: 70%;"></span>
+                                </div>
                                 <div class="col-lg-12 p-4 mb20">
+                                    <h4>Prime Location</h4>
                                     <p>MyCo X enjoys a prime location, providing businesses and professionals with a
                                         strategic and prestigious workspace in the heart of the city.</p>
                                 </div>
@@ -376,13 +592,15 @@
                     <div class="col-lg-2 col-md-6 col-sm-12">
                         <div class="mb30">
                             <div class="top text-center">
-                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="Comfortable Workspace"><img
-                                        src="{{ asset('frontoffice/assets/images/why-choose-us/comfortable-Workspace.png') }}"
-                                        alt="" style="width: 70%; margin-top:10px;"></span>
-                                <h4 style="margin-top: -10px;">Comfortable Workspace</h4>
-                                <div class="col-lg-12 p-4">
-                                    <p style="margin-top:-20px;">MyCo X offers a comfortable workspace designed to enhance
+                                <div class="col-lg-12">
+                                    <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=""><img
+                                            src="{{ asset('frontoffice/assets/images/why-choose-us/comfortable-Workspace.png') }}"
+                                            alt="" style="width: 70%;"></span>
+                                </div>
+                                <div class="col-lg-12 p-3">
+                                    <h4>Comfortable Workspace</h4>
+                                    <p>MyCo X offers a comfortable workspace designed to enhance
                                         productivity and
                                         well-being, fostering a positive and inspiring work environment.</p>
                                 </div>
@@ -392,12 +610,14 @@
                     <div class="col-lg-2 col-md-6 col-sm-12">
                         <div class="mb30">
                             <div class="top text-center">
-                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="Fully Furnished"><img
-                                        src="{{ asset('frontoffice/assets/images/why-choose-us/fully-furnished.png') }}"
-                                        alt="" style="width: 70%; margin-top:-14px;"></span>
-                                <h4>Fully Furnished</h4>
+                                <div class="col-lg-12">
+                                    <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=""><img
+                                            src="{{ asset('frontoffice/assets/images/why-choose-us/fully-furnished.png') }}"
+                                            alt="" style="width: 70%;"></span>
+                                </div>
                                 <div class="col-lg-12 p-4 mb20">
+                                    <h4>Fully Furnished</h4>
                                     <p>MyCo X provides fully furnished spaces equipped with modern amenities, ensuring a
                                         hassle-free and comfortable for work experience.</p>
                                 </div>
@@ -407,12 +627,14 @@
                     <div class="col-lg-2 col-md-6 col-sm-12">
                         <div class="mb30">
                             <div class="top text-center">
-                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="Cost Effective"><img
-                                        src="{{ asset('frontoffice/assets/images/why-choose-us/cost-effective.png') }}"
-                                        alt="" style="width: 70%; margin-top:-14px;"></span>
-                                <h4>Cost Effective</h4>
+                                <div class="col-lg-12">
+                                    <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=""><img
+                                            src="{{ asset('frontoffice/assets/images/why-choose-us/cost-effective.png') }}"
+                                            alt="" style="width: 70%;"></span>
+                                </div>
                                 <div class="col-lg-12 p-4 mb20">
+                                    <h4>Cost Effective</h4>
                                     <p>MyCo X offers cost-effective solutions, providing budget-friendly workspaces without
                                         compromising on quality and amenities.</p>
                                 </div>
@@ -422,13 +644,15 @@
                     <div class="col-lg-2 col-md-6 col-sm-12">
                         <div class="mb30">
                             <div class="top text-center">
-                                <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="Networking Opportunities"><img
-                                        src="{{ asset('frontoffice/assets/images/why-choose-us/networking-opportunities.png') }}"
-                                        alt="" style="width: 70%; margin-top:20px;"></span>
-                                <h4 style="margin-top: -10px;">Networking Opportunities</h4>
-                                <div class="col-lg-12 p-4">
-                                    <p style="margin-top: -15px;">MyCo X provides networking opportunities, fostering a
+                                <div class="col-lg-12 p-2">
+                                    <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title=""><img
+                                            src="{{ asset('frontoffice/assets/images/why-choose-us/networking-opportunities.png') }}"
+                                            alt="" style="width: 70%;"></span>
+                                </div>
+                                <div class="col-lg-12 p-3">
+                                    <h4>Networking Opportunities</h4>
+                                    <p>MyCo X provides networking opportunities, fostering a
                                         collaborative environment where
                                         professionals can connect and thrive together.</p>
                                 </div>
@@ -564,7 +788,7 @@
         <section class="pt30 pb30 bg-color-secondary mb-5">
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
-                    <div class="col-md-3">
+                    <div class="col-lg-6 col-md-3">
                         <h5>Punya Permintaan Khusus?</h5>
                         <a href="https://api.whatsapp.com/send?phone=6289633299494&text=Hai%20Admin%20MyCo,%20saya%20mau%20tanya%20perihal%20office%20space%20di%20MyCo%0ANama%20:%20%0AEmail%20:%20%0AKebutuhan%20:%20"
                             class="btn-search-big" target="_blank"><i class="fa fa-whatsapp fa-lg"></i> Whatsapp
@@ -579,7 +803,7 @@
                 <div class="row align-items-center g-4">
                     <div class="col-lg-12">
                         <div class="text-center">
-                            <h2>Space Type</h2>
+                            <h1>Space Type</h1>
                             <div class="small-border bg-color-2"></div>
                         </div>
                     </div>

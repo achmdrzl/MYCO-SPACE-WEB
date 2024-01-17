@@ -683,7 +683,7 @@
      /* --------------------------------------------------
       * back to top
       * --------------------------------------------------*/
-     var scrollTrigger = 500; // px
+     var scrollTrigger = 100; // px
      var t = 0;
 
      function backToTop() {
@@ -698,12 +698,12 @@
              $('#back-to-top').addClass('hide');
          }
 
-         $('#back-to-top').on('click', function(e) {
-             e.preventDefault();
-             $('html,body').stop(true).animate({
-                 scrollTop: 0
-             }, 700);
-         });
+        //  $('#back-to-top').on('click', function(e) {
+        //      e.preventDefault();
+        //      $('html,body').stop(true).animate({
+        //          scrollTop: 0
+        //      }, 700);
+        //  });
      };
      /* --------------------------------------------------
       * plugin | scroll to

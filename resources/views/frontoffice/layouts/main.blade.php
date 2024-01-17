@@ -5,10 +5,15 @@
     <title>MyCo - Coworking Space</title>
     <link rel="icon" href="{{ asset('frontoffice/assets/images/logo-light-3.png') }}" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Coworking Space dan Sewa Kantor Surabaya Jakarta Indonesia | MyCo" name="title" />
-    <meta content="Sewa kantor dan coworking space di Surabaya dengan lokasi strategis demi pengalaman terbaik untuk perusahaan atau bisnis Anda" name="description" />
-    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room, coworking space surabaya 24 jam, coworking space surabaya barat, coworking space surabaya terdekat, cafe coworking space surabaya, coworking space surabaya murah" name="keywords" />
+    <meta
+        content="Sewa kantor dan coworking space di Surabaya dengan lokasi strategis demi pengalaman terbaik untuk perusahaan atau bisnis Anda"
+        name="description" />
+    <meta
+        content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room, coworking space surabaya 24 jam, coworking space surabaya barat, coworking space surabaya terdekat, cafe coworking space surabaya, coworking space surabaya murah"
+        name="keywords" />
     <meta content="MyCo- Coworking Space" name="author" />
     <!-- CSS Files
     ================================================== -->
@@ -125,18 +130,17 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Partnership
-                                        <sup style="font-size: 10px; background-color: #C2A04F; color: #FFF;">Coming soon</sup><span></span>
+                                    <a href="{{ route('partnership.index') }}">Partnership
+                                        {{-- <sup style="font-size: 10px; background-color: #C2A04F; color: #FFF;">Coming
+                                            soon</sup><span></span> --}}
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="de-flex-col">
+                        <div class="de-flex-col btn-book" style="">
                             <div class="menu_side_area">
-                                <a type="button" class="btn-main" data-bs-toggle="modal"
-                                    data-bs-target="#bookingModal"><i class="fa fa-book"></i><span>Booking
-                                        Now!</span>
-                                </a>
+                                <a class="btn-main" id="addBooking"><i class="fa fa-book"></i><span>Booking
+                                        Now!</span></a>
                                 <span id="menu-btn"></span>
                             </div>
                         </div>
@@ -152,8 +156,8 @@
             @yield('content')
 
             <!-- Modal -->
-            <div class="modal fade" id="bookingModal" data-bs-backdrop="static" tabindex="-1]"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="bookingModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -162,33 +166,41 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="row align-items-center justify-content-center text-center"
+                            <div class="row align-items-center justify-content-center text-center p-3"
                                 style="border-bottom: solid 1px #d7d7d7; margin-bottom:25px;">
                                 <div class="col-md-6">
                                     <img src="{{ asset('frontoffice/assets/images/logo/myco-x-landscape.png') }}"
-                                        alt="myco-x-logo" style="width: 50%">
+                                        alt="myco-x-logo" id="myco-x" style="width: 60%">
                                 </div>
                                 <div class="col-md-6">
                                     <img src="{{ asset('frontoffice/assets/images/logo/myco-black-128.png') }}"
-                                        alt="myco-logo" style="width: 30%">
+                                        alt="myco-logo" id="myco" style="width: 35%">
                                 </div>
                             </div>
-                            <form class="row g-3">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                                style="display: none;" style="color: red">
+                            </div>
+                            <form class="row g-3" id="formBooking">
                                 <div class="col-md-6">
-                                    <label for="v_location" class="form-label">Lokasi<span
+                                    <label for="preference" class="form-label">Preferensi<span
                                             style="color: red;">*</span></label>
-                                    <select class="form-select" name="v_location" id="v_location">
-                                        <option selected disabled>-- Pilih Lokasi --</option>
-                                        <option value="indragiri">Indragiri</option>
-                                        <option value="cw-tower">CW Tower</option>
-                                        <option value="trilium-tower">Trilium Tower</option>
-                                        <option value="satoria-tower">Satoria Tower</option>
+                                    <select class="form-select" name="preference" id="preference">
+                                        <option disabled selected>-- Pilih Preferensi --</option>
+                                        <option value="office-tower">Gedung Perkantoran</option>
+                                        <option value="landed-property">Ruko</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="v_occupation" class="form-label">Pekerjaan</label>
-                                    <select class="form-select" name="v_occupation" id="v_occupation">
-                                        <option value="individual" selected>Individual</option>
+                                    <label for="location" class="form-label">Lokasi<span
+                                            style="color: red;">*</span></label>
+                                    <select class="form-select" name="location" id="location">
+                                        <option selected disabled>-- Pilih Lokasi --</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="occupation" class="form-label">Pekerjaan</label>
+                                    <select class="form-select" name="occupation" id="occupation">
+                                        <option value="individual">Individual</option>
                                         <option value="freelance">Freelance</option>
                                         <option value="student">Student</option>
                                         <option value="startup">Startup</option>
@@ -198,78 +210,65 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="v_preference" class="form-label">Preferensi</label>
-                                    <select class="form-select" name="v_preference" id="v_preference">
-                                        <option value="office-tower" selected>Gedung Perkantoran</option>
-                                        <option value="landed-property">Ruko</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="v_spaces" class="form-label">Jenis Ruangan<span
+                                    <label for="spaces" class="form-label">Jenis Ruangan<span
                                             style="color: red;">*</span></label>
-                                    <select class="form-select" name="v_spaces" id="v_spaces">
+                                    <select class="form-select" name="spaces" id="spaces">
                                         <option selected disabled>-- Pilih Ruangan --</option>
-                                        <option value="private-office">Private Office</option>
-                                        <option value="virtual-office">Virtual Office</option>
-                                        <option value="hot-desk">Hot Desk</option>
-                                        <option value="event-space">Event Space</option>
-                                        <option value="meeting-room">Meeting Room</option>
-                                        <option value="studio-room">Studio Room</option>
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="v_people" class="form-label">Jumlah Tim<span
+                                    <label for="people" class="form-label">Jumlah Tim<span
                                             style="color: red;">*</span></label>
-                                    <select class="form-select" name="v_people" id="v_people">
+                                    <select class="form-select" name="people" id="people">
                                         <option selected disabled>-- Pilih Jumlah Tim --</option>
-                                        <option value="private-office">1-3</option>
-                                        <option value="virtual-office">4-7</option>
-                                        <option value="manage-office">8-10</option>
-                                        <option value="manage-office">>10</option>
+                                        <option value="1-3">1-3</option>
+                                        <option value="4-7">4-7</option>
+                                        <option value="8-10">8-10</option>
+                                        <option value=">10">>10</option>
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="dt_mulai" class="form-label">Tanggal Mulai<span
+                                    <label for="date_start" class="form-label">Tanggal Mulai<span
                                             style="color: red;">*</span></label>
-                                    <input type="date" class="form-control" id="dt_mulai"
-                                        placeholder="Apartment, studio, or floor">
+                                    <input type="date" class="form-control" id="date_start" name="date_start">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="dt_tour" class="form-label">Tanggal Tour</label>
-                                    <input type="date" class="form-control" id="dt_tour">
+                                    <label for="date_tour" class="form-label">Tanggal Tour</label>
+                                    <input type="date" class="form-control" name="date_tour" id="date_tour">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="v_name" class="form-label">Nama Anda<span
+                                    <label for="name" class="form-label">Nama Anda<span
                                             style="color: red;">*</span></label>
-                                    <input type="text" class="form-control" id="v_name"
+                                    <input type="text" class="form-control" id="name" name="name"
                                         placeholder="Your name">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="v_companyname" class="form-label">Nama Perusahaan</label>
-                                    <input type="text" class="form-control" id="v_companyname"
+                                    <label for="company_name" class="form-label">Nama Perusahaan</label>
+                                    <input type="text" class="form-control" id="company_name" name="company_name"
                                         placeholder="Company name">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="v_email" class="form-label">Email<span
+                                    <label for="email" class="form-label">Email<span
                                             style="color: red;">*</span></label>
-                                    <input data-inputmask="'alias': 'email'" inputmode="email" class="form-control"
-                                        id="v_email" name="v_email" placeholder="Email address">
+                                    <input class="form-control" type="email" name="email"
+                                        placeholder="Email address">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="v_phone" class="form-label">Nomor Telepon<span
+                                    <label for="phone" class="form-label">Nomor Telepon<span
                                             style="color: red;">*</span></label>
-                                    <input name="v_phone" class="form-control" id="v_phone"
+                                    <input name="phone" class="form-control" id="phone"
                                         placeholder="Phone number">
                                 </div>
                                 <div class="col-12">
-                                    <label for="v_notesleadbooking" class="form-label">Jelaskan Kebutuhan Anda<span
+                                    <label for="notes_lead_booking" class="form-label">Jelaskan Kebutuhan Anda<span
                                             style="color: red;">*</span></label>
-                                    <textarea name="v_notesleadbooking" id="v_notesleadbooking" placeholder="Your requirements" cols="20"
+                                    <textarea name="notes_lead_booking" id="notes_lead_booking" placeholder="Your requirements" cols="20"
                                         rows="5" class="form-control"></textarea>
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn-main btn-fullwidth">Booking</button>
+                            <button type="button" id="submitAddBooking"
+                                class="btn-main btn-fullwidth">Booking</button>
                         </div>
                         </form>
                     </div>
@@ -309,7 +308,8 @@
 
         </div>
         <!-- content close -->
-        <a href="#" id="back-to-top"></a>
+        <a href="https://api.whatsapp.com/send?phone=6289633299494&text=Hai%20Admin%20MyCo,%20saya%20mau%20tanya%20perihal%20office%20space%20di%20MyCo%0ANama%20:%20%0AEmail%20:%20%0AKebutuhan%20:%20"
+            id="back-to-top" target="_blank"></a>
 
         <!-- footer begin -->
         <footer class="footer-light">
@@ -369,9 +369,8 @@
                             <div class="de-flex">
                                 <div class="de-flex-col">
                                     <a href="/">
-                                        <img alt="" class="f-logo"
-                                            src="{{ asset('frontoffice/assets/images/logomyco-7.png') }}" /><span
-                                            class="copy">&copy; Copyright 2023 - MyCo Space</span>
+                                        {{-- <img alt="" class="f-logo"src="{{ asset('frontoffice/assets/images/logomyco-7.png') }}" /> --}}
+                                        <span class="copy">&copy; Copyright 2023 - MyCo Coworking Space</span>
                                     </a>
                                 </div>
                                 <div class="de-flex-col">
@@ -407,25 +406,206 @@
     <!-- jQuery Script to Trigger Modal on Page Load with Animation -->
     <script>
         $(document).ready(function() {
-            // Set a delay of 5000 milliseconds (5 seconds) before showing the modal
-            setTimeout(function() {
-                // Trigger the modal show event
-                $('#couponModal').on('show.bs.modal', function() {
-                    $(this).find('.modal-dialog').addClass('modal-dialog-animate');
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            // // Set a delay of 5000 milliseconds (5 seconds) before showing the modal
+            // setTimeout(function() {
+            //     // Trigger the modal show event
+            //     $('#couponModal').on('show.bs.modal', function() {
+            //         $(this).find('.modal-dialog').addClass('modal-dialog-animate');
+            //     });
+
+            //     $('#couponModal').modal('show');
+            // }, 1000);
+
+            // // Add click event listener to close the modal when the link is clicked
+            // $('#closeModalLink').on('click', function() {
+            //     $('#couponModal').modal('hide');
+            // });
+
+            // // Optional: If you want to remove the animation class after the modal is shown
+            // $('#couponModal').on('shown.bs.modal', function() {
+            //     $(this).find('.modal-dialog').removeClass('modal-dialog-animate');
+            // });
+
+            // FUNC DYNAMICALLY LOCATION OPTION
+            $('#preference').change(function() {
+                // PREFERENCE SELECT
+                var location = '<option selected disabled>-- Pilih Lokasi --</option>';
+                var preference = $(this).val();
+
+                if (preference === 'office-tower') {
+                    location += '<option value="cw-tower">Cw Tower</option>\
+                                    <option value="trilium-tower">Trillium Tower</option>\
+                                    <option value="satoria-tower">Satoria Tower</option>';
+                } else if (preference === 'landed-property') {
+                    location += '<option value="indragiri">Indragiri</option>';
+                }
+
+                console.log('location', location);
+                $('#location').html(location); // Update #location based on the selected preference
+
+                // reset spaces
+                var spaces = '<option selected disabled>-- Pilih Ruangan --</option>';
+                $('#spaces').html(spaces);
+            });
+
+            // FUNC DYNAMICALLY SPACES OPTION
+            $('#location').change(function() {
+                // LOCATION SELECT
+                var spaces = '<option selected disabled>-- Pilih Ruangan --</option>';
+                var selectedLocation = $(this).val();
+
+                if (selectedLocation === 'indragiri') {
+                    spaces += '<option value="private-office">Private Office</option>\
+                                <option value="virtual-office-bronze">Virtual Office</option>\
+                                <option value="hot-desk-student">Hot Desk</option>\
+                                <option value="dedicated-desk">Dedicated Desk</option>\
+                                <option value="event-space">Event Space</option>\
+                                <option value="meeting-room-hourly">Meeting Room</option>';
+
+                    // Reduce opacity and remove shadow from myco image
+                    $('#myco-x').css({
+                        'opacity': 0.3,
+                        'box-shadow': 'none'
+                    });
+
+                    // Highlight myco-x image and apply bottom inner shadow
+                    $('#myco').css({
+                        'opacity': 1,
+                        'box-shadow': '0 10px 10px -10px #C2A04F'
+                    });
+                } else if (selectedLocation === 'cw-tower') {
+                    spaces += '<option value="private-office">Private Office</option>\
+                                <option value="virtual-office-bronze">Virtual Office</option>\
+                                <option value="hot-desk-student">Hot Desk</option>\
+                                <option value="dedicated-desk">Dedicated Desk</option>\
+                                <option value="event-space">Event Space</option>\
+                                <option value="meeting-room-hourly">Meeting Room</option>\
+                                <option value="podcast-room-hourly">Podcast Room</option>\
+                                <option value="studio-room-hourly">Studio Room</option>';
+
+                    // Highlight myco-x image and apply bottom inner shadow
+                    $('#myco-x').css({
+                        'opacity': 1,
+                        'box-shadow': '0 10px 10px -10px #C2A04F'
+                    });
+                    // Reduce opacity and remove shadow from myco image
+                    $('#myco').css({
+                        'opacity': 0.3,
+                        'box-shadow': 'none'
+                    });
+                } else if (selectedLocation === 'trilium-tower') {
+                    spaces += '<option value="private-office">Private Office</option>\
+                                <option value="trilium-tower">Virtual Office</option>\
+                                <option value="hot-desk-student">Hot Desk</option>\
+                                <option value="dedicated-desk">Dedicated Desk</option>\
+                                <option value="event-space">Event Space</option>\
+                                <option value="meeting-room-hourly">Meeting Room</option>\
+                                <option value="studio-room-hourly">Studio Room</option>';
+
+                    // Highlight myco-x image and apply bottom inner shadow
+                    $('#myco-x').css({
+                        'opacity': 1,
+                        'box-shadow': '0 10px 10px -10px #C2A04F'
+                    });
+
+                    // Reduce opacity and remove shadow from myco image
+                    $('#myco').css({
+                        'opacity': 0.3,
+                        'box-shadow': 'none'
+                    });
+
+                } else {
+                    spaces += '<option value="manage-office">Manage Office</option>';
+
+                    // Highlight myco-x image and apply bottom inner shadow
+                    $('#myco-x').css({
+                        'opacity': 1,
+                        'box-shadow': '0 10px 10px -10px #C2A04F'
+                    });
+
+                    // Reduce opacity and remove shadow from myco image
+                    $('#myco').css({
+                        'opacity': 0.3,
+                        'box-shadow': 'none'
+                    });
+                }
+
+                console.log('spaces', spaces);
+                $('#spaces').html(spaces); // Update #spaces based on the selected location
+            })
+
+            // CLOSE MODAL
+            $(".btn-close").click(function(){
+                 $('#bookingModal').modal('hide');
+            })
+
+            // CREATE BOOKING DATA
+            $('#addBooking').click(function() {
+                $('#submitAddBooking').val("create-booking");
+                $('#booking_id').val('');
+                $('#formBooking').trigger("reset");
+                // $('#bookingModalHeading').html("ADD NEW BOOKING DATA");
+                $('#bookingModal').modal('show');
+                // Reduce opacity and remove shadow from myco image
+                $('#myco-x').css({
+                    'opacity': 0.3,
+                    'box-shadow': 'none'
                 });
 
-                $('#couponModal').modal('show');
-            }, 1000);
-
-            // Add click event listener to close the modal when the link is clicked
-            $('#closeModalLink').on('click', function() {
-                $('#couponModal').modal('hide');
+                // Highlight myco-x image and apply bottom inner shadow
+                $('#myco').css({
+                    'opacity': 0.3,
+                    'box-shadow': 'none'
+                });
             });
-        });
 
-        // Optional: If you want to remove the animation class after the modal is shown
-        $('#couponModal').on('shown.bs.modal', function() {
-            $(this).find('.modal-dialog').removeClass('modal-dialog-animate');
+
+            // SUBMIT BOOKING DATA
+            $('#submitAddBooking').click(function(e) {
+                e.preventDefault();
+                $(this).html('Sending..');
+
+                $.ajax({
+                    url: "{{ route('add.booking') }}",
+                    data: new FormData(this.form),
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    type: "POST",
+
+                    success: function(response) {
+                        console.log(response)
+                        if (response.errors) {
+                            $('.alert-danger').html('');
+                            $.each(response.errors, function(key, value) {
+                                $('.alert-danger').show();
+                                $('.alert-danger').append('<strong><li>' + value +
+                                    '</li></strong>');
+                            });
+                            $('#submitAddBooking').html('Booking');
+
+                        } else {
+                            $('.alert-danger').hide();
+
+                            Swal.fire({
+                                title: `${response.message}`,
+                                text: "Terima kasih telah mengisi formulir online booking MyCo. Salinan booking akan segera terkirim ke email Anda dan tim kami akan segera menghubungi Anda",
+                                icon: "success"
+                            });
+
+                            $('#submitAddBooking').html('Booking');
+                            $('#bookingModal').modal('hide');
+                        }
+                    }
+                });
+            });
         });
     </script>
 
@@ -433,6 +613,7 @@
 
     <!-- Javascript Files
     ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="{{ asset('frontoffice/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('frontoffice/assets/js/bootstrap.min.js') }}"></script>

@@ -193,7 +193,7 @@ body:not(.side-layout) header:not(.smaller):not(.header-mobile).header-light.tra
 
 header.autoshow {
     top: -120px;
-    height: 100px !important;
+    height: 70px !important;
 }
 
 header.autoshow.scrollOn,
@@ -331,11 +331,6 @@ header.smaller.scroll-light #mainmenu li a,
 header.smaller.scroll-light #mainmenu li.has-child:after {
     color: #333333;
 }
-
-/* header.smaller.scroll-light #logo h2,
-header.smaller.scroll-light #logo h2:after {
-    color: #333333;
-} */
 
 header.smaller.scroll-light #mainmenu li li a:hover {
     color: #ffffff;
@@ -601,7 +596,7 @@ header .header-col.mid .social-icons {
 #mainmenu ul {
     margin: 0px 0px;
     padding: 0px;
-    height: 100px;
+    height: 30px;
     border-radius: 0px;
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
@@ -1196,7 +1191,7 @@ header.header-mobile.has-topbar {
 
 header.header-mobile.has-topbar .header-row,
 header.header-mobile.has-topbar .header-col {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 header.header-mobile.has-topbar #topbar {
@@ -5547,7 +5542,7 @@ i.font60 {
     display: inline-block;
     padding: 4px 12px;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 18px;
 }
 .de-price
 
@@ -9670,8 +9665,8 @@ a.img-icon-zoom {
     width: 100%;
 }
 
-/* margin:5px;
-} */
+margin:5px;
+}
 
 /* clear fix */
 .grid:after {
@@ -9916,8 +9911,8 @@ a.img-icon-zoom {
     border-color: #555;
 }
 
-/* .widget_tags li a:hover border-color: #eceff3;
-} */
+.widget_tags li a:hover border-color: #eceff3;
+}
 
 footer .widget {
     border: none;
@@ -10106,10 +10101,10 @@ i.bg-color-secondary {
 
 /* box-url */
 
-.box-url {
+.box-url{
     position: relative;
     padding: 30px;
-    background: #ffffff;
+    background: #fffffff;
     border: solid 1px rgba(0, 0, 0, .2);
     display: block;
     border-radius: 20px;
@@ -10119,7 +10114,6 @@ i.bg-color-secondary {
     -webkit-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.1);
     -moz-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.1);
 }
-
 .dark-scheme .box-url{
     background: rgba(255, 255, 255, .03);
     border-color: rgba(255, 255, 255, .1);
@@ -11664,12 +11658,12 @@ section.bg-grey {
     background: #ffffff;
     position: fixed;
     bottom: -40px;
-    right: 20px;
+    right: 10px;
     z-index: 1020;
-    width: 80px;
-    height: 80px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    line-height: 80px;
+    line-height: 30px;
     cursor: poInter;
     border: 0;
     border-radius: 100%;
@@ -11691,20 +11685,13 @@ section.bg-grey {
 }
 
 #back-to-top.hide {
-    bottom: -120px;
+    bottom: -40px;
 }
 
-/* #back-to-top:before {
+#back-to-top:before {
     font-family: "FontAwesome";
     font-size: 18px;
     content: "\f106";
-    color: #fff !important;
-    position: relative;
-} */
-#back-to-top:before {
-    font-family: "FontAwesome";
-    font-size: 50px;
-    content: "\f232"; /* WhatsApp logo Unicode */
     color: #fff !important;
     position: relative;
 }
@@ -13583,7 +13570,7 @@ header.smaller,
 
 .de-event-item{
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 20px;file:///K:/Works/_%20Upcoming%20Items%20_/CoSpace/theme%20preview/images/news/news-1.jpg
 }
 .de-event-item .d-image{
     position: relative;
@@ -14521,7 +14508,7 @@ a.btn-slider:hover {
     margin: 0 6px;
     display: inline-block;
     zoom: 1;
-    display: inline;
+    *display: inline;
 }
 
 .testi-slider .flex-control-paging li a {
@@ -14914,7 +14901,7 @@ img {
 
     header .header-col.mid {
         position: absolute;
-        top: 100px;
+        top: 70px;
         width: 100%;
         padding: 0 0 0 0;
     }
@@ -14924,7 +14911,7 @@ img {
     }
 
     .sm-pt10 {
-        padding-top: -25px;
+        padding-top: 10px;
     }
 
     #menu-btn {
@@ -14947,7 +14934,7 @@ img {
 
     .header-col-mid #mainmenu {
         position: absolute;
-        top: 120px;
+        top: 90px;
         width: 100%;
         padding: 0 0 0 0;
         left: 20px;
@@ -14987,7 +14974,7 @@ img {
     .de_light header.side-header {
         position: absolute;
         display: block;
-        height: 100px;
+        height: 60px;
         top: 0;
         background: #000;
     }
@@ -14996,7 +14983,7 @@ img {
         position: absolute;
         background: #000;
         margin: 0;
-        top: 100px;
+        top: 60px;
         left: 0;
         width: 100%;
     }
@@ -16029,21 +16016,4 @@ img {
         left: 0;
         top: -21px;
     }
-}
-
-.clients-slide .owl-stage,
-.clients-slide-medium .owl-stage {
-    display: flex;
-    align-items: center;
-}
-
-.clients-slide .img-item figure,
-.clients-slide-medium .img-item figure {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-figure {
-  margin: 1em 0;
-  /* Extra wide images within figure tags don't overflow the content area. */
 }

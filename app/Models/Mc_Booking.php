@@ -9,7 +9,7 @@ class Mc_Booking extends Model
 {
     use HasFactory;
 
-    protected $table = 'mc_booking';
+    protected $table = 'mc_bookings';
 
     protected $primaryKey = 'booking_id';
 
@@ -40,6 +40,11 @@ class Mc_Booking extends Model
 
     public function location()
     {
-        return $this->hasOne(Mc_Location::class, 'v_code');
+        return $this->belongsTo(Mc_Location::class, 'v_location', 'v_code');
+    }
+
+    public function space()
+    {
+        return $this->belongsTo(Mc_Spaces::class, 'v_spaces', 'v_code');
     }
 }
