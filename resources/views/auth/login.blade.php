@@ -195,7 +195,7 @@
             <div id="top"></div>
 
             <section class="full-height relative no-top no-bottom vertical-center"
-                data-bgimage="url({{ asset('frontoffice/assets/images/background/subheader.jpg') }}) top"
+                data-bgimage="url({{ asset('frontoffice/assets/images/background/12b.jpg') }}) top"
                 data-stellar-background-ratio=".5">
                 <div class="overlay-gradient t50">
                     <div class="center-y relative">
@@ -203,9 +203,8 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-6 text-light wow fadeInRight" data-wow-delay=".5s">
                                     <div class="spacer-10"></div>
-                                    <h1>The best place for work<i class="bx bxl-tiktok"></i></h1>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+                                    <h1>MYCO COWORKING SPACE</h1>
+                                    <p class="lead">Convenient location with easy access to transportation, amenities, and services. A central location reduces commute time and allows for a better work-life balance.</p>
                                 </div>
 
                                 <div class="col-lg-4 offset-lg-1 wow fadeIn" data-wow-delay=".5s">

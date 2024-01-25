@@ -60,14 +60,53 @@
                 transform: none;
             }
         }
+
+        /* Add your custom styles here */
+        #couponModal .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            /* Adjust the height as needed */
+            object-fit: cover;
+        }
+
+        #couponModal .modal-content {
+            border: none;
+        }
+
+        #couponModal .modal-header {
+            background-color: #C2A04F;
+            color: #fff;
+            border-bottom: none;
+        }
+
+        #couponModal .modal-footer {
+            background-color: #C2A04F;
+            border-top: none;
+        }
+
+        #couponModal .carousel-control-prev,
+        #couponModal .carousel-control-next {
+            background-color: transparent;
+            opacity: 0.7;
+        }
+
+        #couponModal .carousel-control-prev-icon,
+        #couponModal .carousel-control-next-icon {
+            color: #fff;
+        }
     </style>
     @stack('style-alt')
 </head>
 
 <body>
     <div id="wrapper">
-        {{-- <div id="preloader">
+        <div id="preloader" style="display:none;">
             <div class="preloader1"></div>
+        </div>
+        {{-- <div class="spinner-container" style="display:none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div> --}}
         <!-- header begin -->
         @stack('header-alt')
@@ -139,7 +178,8 @@
                         </div>
                         <div class="de-flex-col btn-book" style="">
                             <div class="menu_side_area">
-                                <a class="btn-main" id="addBooking"><i class="fa fa-book"></i><span>Booking
+                                <a class="btn-main" type="button" id="addBooking"><i
+                                        class="fa fa-cart-plus"></i><span>Booking
                                         Now!</span></a>
                                 <span id="menu-btn"></span>
                             </div>
@@ -155,139 +195,19 @@
             <div id="top"></div>
             @yield('content')
 
-            <!-- Modal -->
-            <div class="modal fade" id="bookingModal" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Rekomendasi Kami Untuk Anda!</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row align-items-center justify-content-center text-center p-3"
-                                style="border-bottom: solid 1px #d7d7d7; margin-bottom:25px;">
-                                <div class="col-md-6">
-                                    <img src="{{ asset('frontoffice/assets/images/logo/myco-x-landscape.png') }}"
-                                        alt="myco-x-logo" id="myco-x" style="width: 60%">
-                                </div>
-                                <div class="col-md-6">
-                                    <img src="{{ asset('frontoffice/assets/images/logo/myco-black-128.png') }}"
-                                        alt="myco-logo" id="myco" style="width: 35%">
-                                </div>
-                            </div>
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                                style="display: none;" style="color: red">
-                            </div>
-                            <form class="row g-3" id="formBooking">
-                                <div class="col-md-6">
-                                    <label for="preference" class="form-label">Preferensi<span
-                                            style="color: red;">*</span></label>
-                                    <select class="form-select" name="preference" id="preference">
-                                        <option disabled selected>-- Pilih Preferensi --</option>
-                                        <option value="office-tower">Gedung Perkantoran</option>
-                                        <option value="landed-property">Ruko</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="location" class="form-label">Lokasi<span
-                                            style="color: red;">*</span></label>
-                                    <select class="form-select" name="location" id="location">
-                                        <option selected disabled>-- Pilih Lokasi --</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="occupation" class="form-label">Pekerjaan</label>
-                                    <select class="form-select" name="occupation" id="occupation">
-                                        <option value="individual">Individual</option>
-                                        <option value="freelance">Freelance</option>
-                                        <option value="student">Student</option>
-                                        <option value="startup">Startup</option>
-                                        <option value="smes">SMEs</option>
-                                        <option value="large-company">Large Company</option>
-                                        <option value="non-profit-organization">Non-profit Organization</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="spaces" class="form-label">Jenis Ruangan<span
-                                            style="color: red;">*</span></label>
-                                    <select class="form-select" name="spaces" id="spaces">
-                                        <option selected disabled>-- Pilih Ruangan --</option>
-                                    </select>
-                                </div>
-                                <div class="col-4">
-                                    <label for="people" class="form-label">Jumlah Tim<span
-                                            style="color: red;">*</span></label>
-                                    <select class="form-select" name="people" id="people">
-                                        <option selected disabled>-- Pilih Jumlah Tim --</option>
-                                        <option value="1-3">1-3</option>
-                                        <option value="4-7">4-7</option>
-                                        <option value="8-10">8-10</option>
-                                        <option value=">10">>10</option>
-                                    </select>
-                                </div>
-                                <div class="col-4">
-                                    <label for="date_start" class="form-label">Tanggal Mulai<span
-                                            style="color: red;">*</span></label>
-                                    <input type="date" class="form-control" id="date_start" name="date_start">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="date_tour" class="form-label">Tanggal Tour</label>
-                                    <input type="date" class="form-control" name="date_tour" id="date_tour">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="name" class="form-label">Nama Anda<span
-                                            style="color: red;">*</span></label>
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Your name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="company_name" class="form-label">Nama Perusahaan</label>
-                                    <input type="text" class="form-control" id="company_name" name="company_name"
-                                        placeholder="Company name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label">Email<span
-                                            style="color: red;">*</span></label>
-                                    <input class="form-control" type="email" name="email"
-                                        placeholder="Email address">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="phone" class="form-label">Nomor Telepon<span
-                                            style="color: red;">*</span></label>
-                                    <input name="phone" class="form-control" id="phone"
-                                        placeholder="Phone number">
-                                </div>
-                                <div class="col-12">
-                                    <label for="notes_lead_booking" class="form-label">Jelaskan Kebutuhan Anda<span
-                                            style="color: red;">*</span></label>
-                                    <textarea name="notes_lead_booking" id="notes_lead_booking" placeholder="Your requirements" cols="20"
-                                        rows="5" class="form-control"></textarea>
-                                </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" id="submitAddBooking"
-                                class="btn-main btn-fullwidth">Booking</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
             {{-- Modal Pop Up --}}
             {{-- <div class="modal fade" tabindex="-1" role="dialog" id="couponModal">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-body p-0 m-0">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-sm-6 col-xs-12">
-                                    <img src="{{ asset('frontoffice/assets/images/misc/space-type-photo.jpg') }}"
+                            <div class="row g-0 align-items-center justify-content-center">
+                                <div class="col-lg-5 col-md-11 mb-3 mb-md-0">
+                                    <img src="{{ asset('frontoffice/assets/images/misc/space-type-podcast-1.png') }}"
                                         alt="Gift Poster" class="img-fluid" id="leftImg">
                                 </div>
-                                <div class="col-sm-6 col-xs-12 text-center">
+                                <div class="col-lg-6 col-md-12 text-center">
                                     <div class="px-4">
-                                        <h2>30% Off !</h2>
+                                        <h2 class="mb-4">30% Off !</h2>
                                         <p class="my-3 text-secondary">A perfect way to start your holiday season with
                                             our vast collection of gifts.</p>
                                         <p class="mt-3 mb-4 text-success">Avail coupon now</p>
@@ -306,6 +226,51 @@
                 </div>
             </div> --}}
 
+            <!-- Advertisement Modal -->
+            <div class="modal fade" id="couponModal" tabindex="-1" aria-labelledby="advertisementModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="advertisementModalLabel" style="color: #FFF">Special
+                                Offer!</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close" style="background-color: #FFF"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="carouselExample" data-bs-interval="5000" class="carousel slide"
+                                data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{ asset('frontoffice/assets/images/advertisement/End Year - Private Office.png') }}"
+                                            class="d-block w-100 img-fluid" alt="Slide 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('frontoffice/assets/images/advertisement/MYCO POST 3 (1).png') }}"
+                                            class="d-block w-100 img-fluid" alt="Slide 2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{ asset('frontoffice/assets/images/advertisement/MYCO POST 3.png') }}"
+                                            class="d-block w-100 img-fluid" alt="Slide 3">
+                                    </div>
+                                    <!-- Add more carousel items as needed -->
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExample" data-bs-slide="prev">
+                                    <span class="bg-dark" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExample" data-bs-slide="next">
+                                    <span class="bg-dark" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- content close -->
         <a href="https://api.whatsapp.com/send?phone=6289633299494&text=Hai%20Admin%20MyCo,%20saya%20mau%20tanya%20perihal%20office%20space%20di%20MyCo%0ANama%20:%20%0AEmail%20:%20%0AKebutuhan%20:%20"
@@ -320,14 +285,14 @@
                             <h5>Services</h5>
                             <ul>
                                 <li><a href="{{ route('private.office') }}">Private Office</a></li>
-                                <li><a href="#">Manage Office</a></li>
-                                <li><a href="#">Virtual Office</a></li>
-                                <li><a href="#">Meeting Room</a></li>
-                                <li><a href="#">Hot Desk</a></li>
-                                <li><a href="#">Dedicated Desk</a></li>
-                                <li><a href="#">Event Space</a></li>
-                                <li><a href="#">Podcast Room</a></li>
-                                <li><a href="#">Studio Room</a></li>
+                                <li><a href="{{ route('manage.office') }}">Manage Office</a></li>
+                                <li><a href="{{ route('virtual.office') }}">Virtual Office</a></li>
+                                <li><a href="{{ route('meeting.room') }}">Meeting Room</a></li>
+                                <li><a href="{{ route('hot.desk') }}">Hot Desk</a></li>
+                                <li><a href="{{ route('dedicated.desk') }}">Dedicated Desk</a></li>
+                                <li><a href="{{ route('event.index') }}">Event Space</a></li>
+                                <li><a href="{{ route('podcast.index') }}">Podcast Room</a></li>
+                                <li><a href="{{ route('studio.index') }}">Studio Room</a></li>
                             </ul>
                         </div>
                     </div>
@@ -399,217 +364,10 @@
 
     </div>
 
+    {{-- MODAL BOOKING --}}
+    @include('frontoffice.layouts.modal-booking')
     {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <div class="elfsight-app-e775e09b-acdc-4b73-b016-c9ab38139ea6" data-elfsight-app-lazy></div> --}}
-
-    {{-- Show Modal --}}
-    <!-- jQuery Script to Trigger Modal on Page Load with Animation -->
-    <script>
-        $(document).ready(function() {
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            // // Set a delay of 5000 milliseconds (5 seconds) before showing the modal
-            // setTimeout(function() {
-            //     // Trigger the modal show event
-            //     $('#couponModal').on('show.bs.modal', function() {
-            //         $(this).find('.modal-dialog').addClass('modal-dialog-animate');
-            //     });
-
-            //     $('#couponModal').modal('show');
-            // }, 1000);
-
-            // // Add click event listener to close the modal when the link is clicked
-            // $('#closeModalLink').on('click', function() {
-            //     $('#couponModal').modal('hide');
-            // });
-
-            // // Optional: If you want to remove the animation class after the modal is shown
-            // $('#couponModal').on('shown.bs.modal', function() {
-            //     $(this).find('.modal-dialog').removeClass('modal-dialog-animate');
-            // });
-
-            // FUNC DYNAMICALLY LOCATION OPTION
-            $('#preference').change(function() {
-                // PREFERENCE SELECT
-                var location = '<option selected disabled>-- Pilih Lokasi --</option>';
-                var preference = $(this).val();
-
-                if (preference === 'office-tower') {
-                    location += '<option value="cw-tower">Cw Tower</option>\
-                                    <option value="trilium-tower">Trillium Tower</option>\
-                                    <option value="satoria-tower">Satoria Tower</option>';
-                } else if (preference === 'landed-property') {
-                    location += '<option value="indragiri">Indragiri</option>';
-                }
-
-                console.log('location', location);
-                $('#location').html(location); // Update #location based on the selected preference
-
-                // reset spaces
-                var spaces = '<option selected disabled>-- Pilih Ruangan --</option>';
-                $('#spaces').html(spaces);
-            });
-
-            // FUNC DYNAMICALLY SPACES OPTION
-            $('#location').change(function() {
-                // LOCATION SELECT
-                var spaces = '<option selected disabled>-- Pilih Ruangan --</option>';
-                var selectedLocation = $(this).val();
-
-                if (selectedLocation === 'indragiri') {
-                    spaces += '<option value="private-office">Private Office</option>\
-                                <option value="virtual-office-bronze">Virtual Office</option>\
-                                <option value="hot-desk-student">Hot Desk</option>\
-                                <option value="dedicated-desk">Dedicated Desk</option>\
-                                <option value="event-space">Event Space</option>\
-                                <option value="meeting-room-hourly">Meeting Room</option>';
-
-                    // Reduce opacity and remove shadow from myco image
-                    $('#myco-x').css({
-                        'opacity': 0.3,
-                        'box-shadow': 'none'
-                    });
-
-                    // Highlight myco-x image and apply bottom inner shadow
-                    $('#myco').css({
-                        'opacity': 1,
-                        'box-shadow': '0 10px 10px -10px #C2A04F'
-                    });
-                } else if (selectedLocation === 'cw-tower') {
-                    spaces += '<option value="private-office">Private Office</option>\
-                                <option value="virtual-office-bronze">Virtual Office</option>\
-                                <option value="hot-desk-student">Hot Desk</option>\
-                                <option value="dedicated-desk">Dedicated Desk</option>\
-                                <option value="event-space">Event Space</option>\
-                                <option value="meeting-room-hourly">Meeting Room</option>\
-                                <option value="podcast-room-hourly">Podcast Room</option>\
-                                <option value="studio-room-hourly">Studio Room</option>';
-
-                    // Highlight myco-x image and apply bottom inner shadow
-                    $('#myco-x').css({
-                        'opacity': 1,
-                        'box-shadow': '0 10px 10px -10px #C2A04F'
-                    });
-                    // Reduce opacity and remove shadow from myco image
-                    $('#myco').css({
-                        'opacity': 0.3,
-                        'box-shadow': 'none'
-                    });
-                } else if (selectedLocation === 'trilium-tower') {
-                    spaces += '<option value="private-office">Private Office</option>\
-                                <option value="trilium-tower">Virtual Office</option>\
-                                <option value="hot-desk-student">Hot Desk</option>\
-                                <option value="dedicated-desk">Dedicated Desk</option>\
-                                <option value="event-space">Event Space</option>\
-                                <option value="meeting-room-hourly">Meeting Room</option>\
-                                <option value="studio-room-hourly">Studio Room</option>';
-
-                    // Highlight myco-x image and apply bottom inner shadow
-                    $('#myco-x').css({
-                        'opacity': 1,
-                        'box-shadow': '0 10px 10px -10px #C2A04F'
-                    });
-
-                    // Reduce opacity and remove shadow from myco image
-                    $('#myco').css({
-                        'opacity': 0.3,
-                        'box-shadow': 'none'
-                    });
-
-                } else {
-                    spaces += '<option value="manage-office">Manage Office</option>';
-
-                    // Highlight myco-x image and apply bottom inner shadow
-                    $('#myco-x').css({
-                        'opacity': 1,
-                        'box-shadow': '0 10px 10px -10px #C2A04F'
-                    });
-
-                    // Reduce opacity and remove shadow from myco image
-                    $('#myco').css({
-                        'opacity': 0.3,
-                        'box-shadow': 'none'
-                    });
-                }
-
-                console.log('spaces', spaces);
-                $('#spaces').html(spaces); // Update #spaces based on the selected location
-            })
-
-            // CLOSE MODAL
-            $(".btn-close").click(function(){
-                 $('#bookingModal').modal('hide');
-            })
-
-            // CREATE BOOKING DATA
-            $('#addBooking').click(function() {
-                $('#submitAddBooking').val("create-booking");
-                $('#booking_id').val('');
-                $('#formBooking').trigger("reset");
-                // $('#bookingModalHeading').html("ADD NEW BOOKING DATA");
-                $('#bookingModal').modal('show');
-                // Reduce opacity and remove shadow from myco image
-                $('#myco-x').css({
-                    'opacity': 0.3,
-                    'box-shadow': 'none'
-                });
-
-                // Highlight myco-x image and apply bottom inner shadow
-                $('#myco').css({
-                    'opacity': 0.3,
-                    'box-shadow': 'none'
-                });
-            });
-
-
-            // SUBMIT BOOKING DATA
-            $('#submitAddBooking').click(function(e) {
-                e.preventDefault();
-                $(this).html('Sending..');
-
-                $.ajax({
-                    url: "{{ route('add.booking') }}",
-                    data: new FormData(this.form),
-                    cache: false,
-                    processData: false,
-                    contentType: false,
-                    type: "POST",
-
-                    success: function(response) {
-                        console.log(response)
-                        if (response.errors) {
-                            $('.alert-danger').html('');
-                            $.each(response.errors, function(key, value) {
-                                $('.alert-danger').show();
-                                $('.alert-danger').append('<strong><li>' + value +
-                                    '</li></strong>');
-                            });
-                            $('#submitAddBooking').html('Booking');
-
-                        } else {
-                            $('.alert-danger').hide();
-
-                            Swal.fire({
-                                title: `${response.message}`,
-                                text: "Terima kasih telah mengisi formulir online booking MyCo. Salinan booking akan segera terkirim ke email Anda dan tim kami akan segera menghubungi Anda",
-                                icon: "success"
-                            });
-
-                            $('#submitAddBooking').html('Booking');
-                            $('#bookingModal').modal('hide');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-
-    @stack('script-alt')
 
     <!-- Javascript Files
     ================================================== -->
@@ -634,6 +392,213 @@
     <script src="{{ asset('frontoffice/assets/js/jquery.smartsticky.min.js') }}"></script>
     <script src="{{ asset('frontoffice/assets/js/mdb.min.js') }}"></script>
     <script src="{{ asset('frontoffice/assets/js/designesia.js') }}"></script>
+
+    @stack('script-alt')
+
+    <!-- jQuery Script to Trigger Modal on Page Load with Animation -->
+    <script>
+        $(document).ready(function() {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            // Set a delay of 5000 milliseconds (5 seconds) before showing the modal
+            setTimeout(function() {
+                // Trigger the modal show event
+                $('#couponModal').on('show.bs.modal', function() {
+                    $(this).find('.modal-dialog').addClass('modal-dialog-animate');
+                });
+
+                $('#couponModal').modal('show');
+            }, 1000);
+
+            // Add click event listener to close the modal when the link is clicked
+            $('#closeModalLink, .btn-close').on('click', function() {
+                $('#couponModal').modal('hide');
+            });
+
+            // Optional: If you want to remove the animation class after the modal is shown
+            $('#couponModal').on('shown.bs.modal', function() {
+                $(this).find('.modal-dialog').removeClass('modal-dialog-animate');
+            });
+
+            // // FUNC DYNAMICALLY LOCATION OPTION
+            // $('#preference').change(function() {
+            //     // PREFERENCE SELECT
+            //     var location = '<option selected disabled>-- Pilih Lokasi --</option>';
+            //     var preference = $(this).val();
+
+            //     if (preference === 'office-tower') {
+            //         location += '<option value="cw-tower">Cw Tower</option>\
+            //                         <option value="trilium-tower">Trillium Tower</option>\
+            //                         <option value="satoria-tower">Satoria Tower</option>';
+            //     } else if (preference === 'landed-property') {
+            //         location += '<option value="indragiri">Indragiri</option>';
+            //     }
+
+            //     console.log('location', location);
+            //     $('#location').html(location); // Update #location based on the selected preference
+
+            //     // reset spaces
+            //     var spaces = '<option selected disabled>-- Pilih Ruangan --</option>';
+            //     $('#spaces').html(spaces);
+            // });
+
+            // // FUNC DYNAMICALLY SPACES OPTION
+            // $('#location').change(function() {
+            //     // LOCATION SELECT
+            //     var spaces = '<option selected disabled>-- Pilih Ruangan --</option>';
+            //     var selectedLocation = $(this).val();
+
+            //     if (selectedLocation === 'indragiri') {
+            //         spaces += '<option value="private-office">Private Office</option>\
+            //                     <option value="virtual-office-bronze">Virtual Office</option>\
+            //                     <option value="hot-desk-student">Hot Desk</option>\
+            //                     <option value="dedicated-desk">Dedicated Desk</option>\
+            //                     <option value="event-space">Event Space</option>\
+            //                     <option value="meeting-room-hourly">Meeting Room</option>';
+
+            //         // Reduce opacity and remove shadow from myco image
+            //         $('#myco-x').css({
+            //             'opacity': 0.3,
+            //             'box-shadow': 'none'
+            //         });
+
+            //         // Highlight myco-x image and apply bottom inner shadow
+            //         $('#myco').css({
+            //             'opacity': 1,
+            //             'box-shadow': '0 10px 10px -10px #C2A04F'
+            //         });
+            //     } else if (selectedLocation === 'cw-tower') {
+            //         spaces += '<option value="private-office">Private Office</option>\
+            //                     <option value="virtual-office-bronze">Virtual Office</option>\
+            //                     <option value="hot-desk-student">Hot Desk</option>\
+            //                     <option value="dedicated-desk">Dedicated Desk</option>\
+            //                     <option value="event-space">Event Space</option>\
+            //                     <option value="meeting-room-hourly">Meeting Room</option>\
+            //                     <option value="podcast-room-hourly">Podcast Room</option>\
+            //                     <option value="studio-room-hourly">Studio Room</option>';
+
+            //         // Highlight myco-x image and apply bottom inner shadow
+            //         $('#myco-x').css({
+            //             'opacity': 1,
+            //             'box-shadow': '0 10px 10px -10px #C2A04F'
+            //         });
+            //         // Reduce opacity and remove shadow from myco image
+            //         $('#myco').css({
+            //             'opacity': 0.3,
+            //             'box-shadow': 'none'
+            //         });
+            //     } else if (selectedLocation === 'trilium-tower') {
+            //         spaces += '<option value="private-office">Private Office</option>\
+            //                     <option value="trilium-tower">Virtual Office</option>\
+            //                     <option value="hot-desk-student">Hot Desk</option>\
+            //                     <option value="dedicated-desk">Dedicated Desk</option>\
+            //                     <option value="event-space">Event Space</option>\
+            //                     <option value="meeting-room-hourly">Meeting Room</option>\
+            //                     <option value="studio-room-hourly">Studio Room</option>';
+
+            //         // Highlight myco-x image and apply bottom inner shadow
+            //         $('#myco-x').css({
+            //             'opacity': 1,
+            //             'box-shadow': '0 10px 10px -10px #C2A04F'
+            //         });
+
+            //         // Reduce opacity and remove shadow from myco image
+            //         $('#myco').css({
+            //             'opacity': 0.3,
+            //             'box-shadow': 'none'
+            //         });
+
+            //     } else {
+            //         spaces += '<option value="manage-office">Manage Office</option>';
+
+            //         // Highlight myco-x image and apply bottom inner shadow
+            //         $('#myco-x').css({
+            //             'opacity': 1,
+            //             'box-shadow': '0 10px 10px -10px #C2A04F'
+            //         });
+
+            //         // Reduce opacity and remove shadow from myco image
+            //         $('#myco').css({
+            //             'opacity': 0.3,
+            //             'box-shadow': 'none'
+            //         });
+            //     }
+
+            //     console.log('spaces', spaces);
+            //     $('#spaces').html(spaces); // Update #spaces based on the selected location
+            // })
+
+            // // CLOSE MODAL
+            // $(".btn-close").click(function(){
+            //      $('#bookingModal').modal('hide');
+            // })
+
+            // // CREATE BOOKING DATA
+            // $('#addBooking').click(function() {
+            //     $('#submitAddBooking').val("create-booking");
+            //     $('#booking_id').val('');
+            //     $('#formBooking').trigger("reset");
+            //     // $('#bookingModalHeading').html("ADD NEW BOOKING DATA");
+            //     $('#bookingModal').modal('show');
+            //     // Reduce opacity and remove shadow from myco image
+            //     $('#myco-x').css({
+            //         'opacity': 0.3,
+            //         'box-shadow': 'none'
+            //     });
+
+            //     // Highlight myco-x image and apply bottom inner shadow
+            //     $('#myco').css({
+            //         'opacity': 0.3,
+            //         'box-shadow': 'none'
+            //     });
+            // });
+
+            // // SUBMIT BOOKING DATA
+            // $('#submitAddBooking').click(function(e) {
+            //     e.preventDefault();
+            //     $(this).html('Sending..');
+
+            //     $.ajax({
+            //         url: "{{ route('add.booking') }}",
+            //         data: new FormData(this.form),
+            //         cache: false,
+            //         processData: false,
+            //         contentType: false,
+            //         type: "POST",
+
+            //         success: function(response) {
+            //             console.log(response)
+            //             if (response.errors) {
+            //                 $('.alert-danger').html('');
+            //                 $.each(response.errors, function(key, value) {
+            //                     $('.alert-danger').show();
+            //                     $('.alert-danger').append('<strong><li>' + value +
+            //                         '</li></strong>');
+            //                 });
+            //                 $('#submitAddBooking').html('Booking');
+
+            //             } else {
+            //                 $('.alert-danger').hide();
+
+            //                 Swal.fire({
+            //                     title: `${response.message}`,
+            //                     text: "Terima kasih telah mengisi formulir online booking MyCo. Salinan booking akan segera terkirim ke email Anda dan tim kami akan segera menghubungi Anda",
+            //                     icon: "success"
+            //                 });
+
+            //                 $('#submitAddBooking').html('Booking');
+            //                 $('#bookingModal').modal('hide');
+            //             }
+            //         }
+            //     });
+            // });
+        });
+    </script>
 
 </body>
 

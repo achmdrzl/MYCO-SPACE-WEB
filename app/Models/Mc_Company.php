@@ -30,4 +30,13 @@ class Mc_Company extends Model
         'deleted_at',
         'b_status',
     ];
+
+
+    public function members()
+    {
+        return $this->hasMany(Mc_Member::class, 'fk_company', 'company_id')
+        ->select(['member_id', 'v_name', 'v_location'])
+        ->where('b_picstatus', 1)
+        ->where('b_status', 1);
+    }
 }

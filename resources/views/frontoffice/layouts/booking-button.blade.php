@@ -2,7 +2,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-md-12">
             <h3>Let's Get In Touch</h3>
-            <a type="button" data-bs-toggle="modal" data-bs-target="#bookingModal"
+            <a type="button" id="addBooking2"
                 class="btn-main btn-fullwidth text-center">Booking Now!</a>
         </div>
     </div>

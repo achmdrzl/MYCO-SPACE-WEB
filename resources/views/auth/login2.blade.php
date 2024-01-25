@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <title>CoSpace - Coworking Space Website Template</title>
+    <title>Login Template</title>
     <link rel="icon" href="{{ asset('frontoffice/assets/images/logo-light-3.png') }}" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -46,9 +46,8 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-6 text-light wow fadeInRight" data-wow-delay=".5s">
                                     <div class="spacer-10"></div>
-                                    <h1>The best place for work<i class="bx bxl-tiktok"></i></h1>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+                                    <h1>The best place for work</h1>
+                                    <p class="lead">Convenient location with easy access to transportation, amenities, and services. A central location reduces commute time and allows for a better work-life balance.</p>
                                 </div>
 
                                 <div class="col-lg-4 offset-lg-1 wow fadeIn" data-wow-delay=".5s">

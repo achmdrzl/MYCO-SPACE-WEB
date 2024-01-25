@@ -33,7 +33,7 @@
 @endpush
 
 @push('logo-black')
-    @include('frontoffice.layouts.logo-myco')
+    @include('frontoffice.layouts.logo-black')
 @endpush
 
 @push('header-alt')

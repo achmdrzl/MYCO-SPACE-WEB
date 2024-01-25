@@ -4,54 +4,86 @@
     @include('frontoffice.layouts.logo-white')
 @endpush
 
+<style>
+    /* Default styling for laptops and desktops */
+    .zoom-background {
+        background-image: url({{ asset('frontoffice/assets/images/background/12.jpg') }});
+        background-size: cover;
+        background-position: top;
+        /* adjust as needed */
+        /* Add other necessary styling */
+    }
+
+    /* Media query for mobile devices */
+    @media only screen and (max-width: 767px) {
+        .zoom-background {
+            /* Apply zoom-out effect for mobile devices */
+            transform: scale(1);
+            transform-origin: top;
+        }
+
+        /* You might also need to set a fixed height for the section to ensure the background is visible */
+        .zoom-background {
+            height: 1000px;
+            /* Adjust the height as needed */
+        }
+    }
+</style>
+
 
 @push('header-alt')
     <header class="transparent scroll-light">
     @endpush
 
     @section('content')
-        <section id="section-hero" data-bgimage="url({{ asset('frontoffice/assets/images/background/12.jpg') }}) top"
-            aria-label="section">
+        <section id="section-hero" class="zoom-background"
+            data-bgimage="url({{ asset('frontoffice/assets/images/background/12b.jpg') }}) top" aria-label="section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-light">
                         <div class="spacer-single"></div>
-                        <h6 class="wow fadeInUp" data-wow-delay=".5s"><span class="text-uppercase id-color">We are
-                                MyCo Space</span>
-                        </h6>
+                        <h6 class="wow fadeInUp" data-wow-delay=".5s"><span class="text-uppercase id-color"
+                                style="font-size: 1.5rem;">WE ARE MYCO SPACE</span></h6>
                         <div class="spacer-10"></div>
-                        <h1 class="wow fadeInUp" data-wow-delay=".75s">Innovate <span class="id-color">at the Top</span>
-                            Premium Coworking and Office Solutions.</h1>
-                        <p class="wow fadeInUp lead" data-wow-delay="1s">
+                        <h1 class="wow fadeInUp" data-wow-delay=".75s" style="font-size: 2.5rem;">Innovate <span
+                                class="id-color">at the Top</span> Premium Coworking and Office Solutions.</h1>
+                        <p class="wow fadeInUp lead" data-wow-delay="1s" style="font-size: 1.2rem;">
                             Elevate Your Workspace: Exceptional Work Environments at 4 Prime Locations in Surabaya,
-                            Indonesia. Experience Excellence at MyCo Space.</p>
+                            Indonesia. Experience Excellence at MyCo Space.
+                        </p>
                         <div class="spacer-10"></div>
-                        <a class="btn-main wow fadeInUp lead" type="button" id="addBooking" data-wow-delay="1.25s">Booking Now!</a>
+                        <a class="btn-main wow fadeInUp lead" id="addBooking2" type="button" data-wow-delay="1.25s"
+                            style="font-size: 1.2rem;">Booking Now!</a>
                         <div class="spacer-single"></div>
                         <div class="row">
                             <div class="col-lg-3 col-md-6 col-sm-4 wow fadeInRight mb30" data-wow-delay="1.1s">
                                 <div class="de_count text-left">
-                                    <h3><span class="timer" data-to="150" data-speed="3000">0</span></h3>
-                                    <h5 class="id-color">Rooms Available</h5>
+                                    <h3><span class="timer" data-to="511" data-speed="3000"
+                                            style="font-size: 2rem;">0</span></h3>
+                                    <h5 class="id-color">Happy Customers</h5>
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6 col-sm-4 wow fadeInRight mb30" data-wow-delay="1.4s">
                                 <div class="de_count text-left">
-                                    <h3><span class="timer" data-to="48" data-speed="3000">0</span></h3>
-                                    <h5 class="id-color">Happy Customers</h5>
+                                    <h3><span class="timer" data-to="313" data-speed="3000"
+                                            style="font-size: 2rem;">0</span></h3>
+                                    <h5 class="id-color">Happy Subscribers</h5>
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6 col-sm-4 wow fadeInRight mb30" data-wow-delay="1.7s">
                                 <div class="de_count text-left">
-                                    <h3><span class="timer" data-to="4" data-speed="3000">0</span></h3>
+                                    <h3><span class="timer" data-to="3" data-speed="3000"
+                                            style="font-size: 2rem;">0</span></h3>
                                     <h5 class="id-color">Year Experiences</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="mb-sm-30"></div>
                     </div>
+
+
                 </div>
             </div>
         </section>
@@ -583,8 +615,8 @@
                                 </div>
                                 <div class="col-lg-12 p-4 mb20">
                                     <h4>Prime Location</h4>
-                                    <p>MyCo X enjoys a prime location, providing businesses and professionals with a
-                                        strategic and prestigious workspace in the heart of the city.</p>
+                                    {{-- <p>MyCo X enjoys a prime location, providing businesses and professionals with a
+                                        strategic and prestigious workspace in the heart of the city.</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -595,14 +627,14 @@
                                 <div class="col-lg-12">
                                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top"
                                         title=""><img
-                                            src="{{ asset('frontoffice/assets/images/why-choose-us/comfortable-Workspace.png') }}"
+                                            src="{{ asset('frontoffice/assets/images/why-choose-us/comfortable-workspace.png') }}"
                                             alt="" style="width: 70%;"></span>
                                 </div>
                                 <div class="col-lg-12 p-3">
                                     <h4>Comfortable Workspace</h4>
-                                    <p>MyCo X offers a comfortable workspace designed to enhance
+                                    {{-- <p>MyCo X offers a comfortable workspace designed to enhance
                                         productivity and
-                                        well-being, fostering a positive and inspiring work environment.</p>
+                                        well-being, fostering a positive and inspiring work environment.</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -618,8 +650,8 @@
                                 </div>
                                 <div class="col-lg-12 p-4 mb20">
                                     <h4>Fully Furnished</h4>
-                                    <p>MyCo X provides fully furnished spaces equipped with modern amenities, ensuring a
-                                        hassle-free and comfortable for work experience.</p>
+                                    {{-- <p>MyCo X provides fully furnished spaces equipped with modern amenities, ensuring a
+                                        hassle-free and comfortable for work experience.</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -635,8 +667,8 @@
                                 </div>
                                 <div class="col-lg-12 p-4 mb20">
                                     <h4>Cost Effective</h4>
-                                    <p>MyCo X offers cost-effective solutions, providing budget-friendly workspaces without
-                                        compromising on quality and amenities.</p>
+                                    {{-- <p>MyCo X offers cost-effective solutions, providing budget-friendly workspaces without
+                                        compromising on quality and amenities.</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -652,9 +684,9 @@
                                 </div>
                                 <div class="col-lg-12 p-3">
                                     <h4>Networking Opportunities</h4>
-                                    <p>MyCo X provides networking opportunities, fostering a
+                                    {{-- <p>MyCo X provides networking opportunities, fostering a
                                         collaborative environment where
-                                        professionals can connect and thrive together.</p>
+                                        professionals can connect and thrive together.</p> --}}
                                 </div>
                             </div>
                         </div>
@@ -789,9 +821,9 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
                     <div class="col-lg-6 col-md-3">
-                        <h5>Punya Permintaan Khusus?</h5>
+                        <h4>Punya Permintaan Khusus?</h4>
                         <a href="https://api.whatsapp.com/send?phone=6289633299494&text=Hai%20Admin%20MyCo,%20saya%20mau%20tanya%20perihal%20office%20space%20di%20MyCo%0ANama%20:%20%0AEmail%20:%20%0AKebutuhan%20:%20"
-                            class="btn-search-big" target="_blank"><i class="fa fa-whatsapp fa-lg"></i> Whatsapp
+                            class="btn-search-big" target="_blank"><i class="fa fa-whatsapp fa-lg me-2"></i> Whatsapp
                             Kami !</a>
                     </div>
                 </div>

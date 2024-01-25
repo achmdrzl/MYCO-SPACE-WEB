@@ -87,8 +87,8 @@
                     <div class="col-lg-12 mb-sm-30 text-center">
                         <h2 class="text-black">LET'S TALK ABOUT <span class="id-color">COLLABORATING</span></h2>
                         <p>Fill in the form below with your details, and we'll have a team member contact you.</p>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;"
-                            style="color: red">
+                        <div class="alert alert-danger alertt-danger2 alert-dismissible fade show" role="alert"
+                            style="display: none;" style="color: red">
                         </div>
                         <form class="row g-3" id="formPartnership">
                             <div class="col-md-6">
@@ -181,6 +181,7 @@
                 $('#submitPartnership').click(function(e) {
                     e.preventDefault();
                     $(this).html('Sending..');
+                    $("#preloader").show(); // Show preloader before making the AJAX request
 
                     $.ajax({
                         url: "{{ route('partnership.store') }}",
@@ -193,26 +194,34 @@
                         success: function(response) {
                             console.log(response)
                             if (response.errors) {
-                                $('.alert-danger').html('');
+                                $('.alertt-danger2').html('');
                                 $.each(response.errors, function(key, value) {
-                                    $('.alert-danger').show();
-                                    $('.alert-danger').append('<strong><li>' + value +
+                                    $('.alertt-danger2').show();
+                                    $('.alertt-danger2').append('<strong><li>' + value +
                                         '</li></strong>');
                                 });
                                 $('#submitPartnership').html('Submit');
+                                $("#preloader").hide();
 
                             } else {
-                                $('.alert-danger').hide();
+                                $('.alertt-danger2').hide();
 
                                 Swal.fire({
                                     title: `${response.message}`,
-                                    text: "Terima kasih telah mengisi formulir online partnership MyCo. Salinan data akan segera terkirim ke email Anda dan tim kami akan segera menghubungi Anda",
+                                    text: "Terima kasih telah mengisi formulir online partnership MyCo, tim kami akan segera menghubungi Anda",
                                     icon: "success"
                                 });
 
                                 $('#submitPartnership').html('Submit');
+                                $("#preloader").hide();
+
                                 $('#formPartnership').trigger('reset');
                             }
+                        },
+                        error: function(error) {
+                            console.log(error);
+                            $("#preloader")
+                                .hide(); // Ensure preloader is hidden in case of an error
                         }
                     });
                 });

@@ -39,13 +39,13 @@
                 font-size: 12px;
             }
         }
-        
+
         @media (max-width: 767px) {
             .de-title {
                 font-size: 16px;
             }
         }
-        
+
         @media (max-width: 767px) {
             table th {
                 font-size: 12px;
@@ -292,26 +292,26 @@
                                                         <th class="bronze center-align">PRICE</th>
                                                     </tr>
                                                 </thead> --}}
-                                               <tbody>
+                                                <tbody>
                                                     <tr>
                                                         <th><span class="">Hot Desk Student</span></th>
-                                                        <th class="center-align">50.0000 / day</th>
+                                                        <th class="center-align">35.000 / 4 hours</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk 4 Hour</span></th>
-                                                        <th class="center-align">50.0000 / 4 hour</th>
+                                                        <th class="center-align">50.000 / 4 hour</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk Daily</span></th>
-                                                        <th class="center-align">65.0000 / day</th>
+                                                        <th class="center-align">65.000 / day</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk Monthly</span></th>
-                                                        <th class="center-align">750.0000 / month</th>
+                                                        <th class="center-align">750.000 / month</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk Private</span></th>
-                                                        <th class="center-align">150.000 / day</th>
+                                                        <th class="center-align">100.000 / day</th>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -499,7 +499,30 @@
                         <div class="spacer-single"></div>
 
                         <div class="sidebar_inner">
-                            @include('frontoffice.layouts.booking-button')
+                            <div id="quick_form" class="form-border mb30">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-12">
+                                        <h3>Let's Get In Touch</h3>
+                                        <a type="button" id="addBooking2"
+                                            class="btn-main btn-fullwidth text-center">Booking Now!</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="de-box">
+                                <h3>Share With Friends</h3>
+                                <div class="de-color-icons mt-2">
+                                    <a href="https://api.whatsapp.com/send/?phone=6285808756528&text=Hallo+admin+MYCO+Ciputra+World....&type=phone_number&app_absent=0"
+                                        title="go to whatsapp" target="_blank"><box-icon type='logo'
+                                            name='whatsapp'></box-icon></a>
+                                    <a href="https://www.instagram.com/myco.space/" title="go to instagram"
+                                        target="_blank"><box-icon name='instagram' type='logo'></box-icon></a>
+                                    <a href="https://www.linkedin.com/in/myco-space-15baa7217/" title="go to linkedin"
+                                        target="_blank"><box-icon name='linkedin' type='logo'></box-icon></a>
+                                    <a href="https://www.tiktok.com/@myco.space " title="go to tiktok"
+                                        target="_blank"><box-icon type='logo' name='tiktok'></box-icon></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-            MYCO<span> X</span>
+            MYCO<span> SPACE</span>
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -32,10 +32,31 @@
                             <a href="{{ route('booking.layanan') }}" class="nav-link">Booking Layanan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/ui-components/alerts.html" class="nav-link">Overtime</a>
+                            <a href="{{ route('overtime.index') }}" class="nav-link">Overtime</a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/ui-components/badges.html" class="nav-link">Booking Fasilitas</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#registrasi" role="button" aria-expanded="false"
+                    aria-controls="registrasi">
+                    <i class="link-icon" data-feather="database"></i>
+                    <span class="link-title">Registrasi</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="registrasi">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('company.index') }}" class="nav-link">Company</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('member.index') }}" class="nav-link">Member</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('non-member.index') }}" class="nav-link">Non-Member</a>
                         </li>
                     </ul>
                 </div>
@@ -131,7 +152,7 @@
                             <a href="pages/ui-components/accordion.html" class="nav-link">House Rules</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/ui-components/alerts.html" class="nav-link">Kuota Member</a>
+                            <a href="{{ route('quotaMember.index') }}" class="nav-link">Kuota Member</a>
                         </li>
                     </ul>
                 </div>

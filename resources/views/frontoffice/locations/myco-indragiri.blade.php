@@ -295,19 +295,19 @@
                                                 <tbody>
                                                     <tr>
                                                         <th><span class="">Hot Desk Student</span></th>
-                                                        <th class="center-align">35.0000 / day</th>
+                                                        <th class="center-align">35.000 / 4 hours</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk 4 Hour</span></th>
-                                                        <th class="center-align">50.0000 / 4 hour</th>
+                                                        <th class="center-align">50.000 / 4 hours</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk Daily</span></th>
-                                                        <th class="center-align">65.0000 / day</th>
+                                                        <th class="center-align">65.000 / day</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk Monthly</span></th>
-                                                        <th class="center-align">750.0000 / month</th>
+                                                        <th class="center-align">750.000 / month</th>
                                                     </tr>
                                                     <tr>
                                                         <th><span class="">Hot Desk Private</span></th>

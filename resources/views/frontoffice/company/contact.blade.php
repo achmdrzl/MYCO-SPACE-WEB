@@ -180,7 +180,10 @@
                                 </span>
                                 <span>
                                     <i class="id-color fa fa-envelope-o fa-lg"></i><a
-                                        href="mailto:Myco.spaceidn@gmail.com">Myco.spaceidn@gmail.com</a> & <a
+                                        href="mailto:Myco.spaceidn@gmail.com">Myco.spaceidn@gmail.com</a>
+                                </span>
+                                <span>
+                                    <i class="id-color fa fa-envelope-o fa-lg"></i><a
                                         href="mailto:admin@my-co.space">Admin@my-co.space</a>
                                 </span>
                             </address>
@@ -207,6 +210,31 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="padding40 box-rounded mb30" data-bgcolor="#F2F6FE">
+                            <h3>MyCo X - Satoria Tower</h3>
+                            <address class="s1">
+                                <span class="indent-list-2">
+                                    <a href="https://maps.app.goo.gl/nMPFHXXyJjmJ7mYUA" style="color: #000">
+                                        <i class="id-color fa fa-map-marker fa-lg"></i>Jl. Pradah Jaya I No.1,
+                                        Pradahkalikendal, Kec. Dukuhpakis, Kota SBY Jawa Timur 60226
+                                    </a>
+                                </span>
+                                <span>
+                                    <a
+                                        href="https://api.whatsapp.com/send/?phone=6289633299494&text=Hallo+admin+MYCO+Indragiri....&type=phone_number&app_absent=0">
+                                        <i class="id-color fa fa-phone fa-lg"></i>+6289633299494
+                                    </a>
+                                </span>
+                                <span>
+                                    <i class="id-color fa fa-envelope-o fa-lg"></i><a
+                                        href="mailto:admin@my-co.space">Admin@my-co.space</a>
+                                </span>
+                                <span>
+                                    <i class="id-color fa fa-envelope-o fa-lg"></i><a
+                                        href="mailto:mycospace.idn@gmail.com">Mycospace.idn@gmail.com</a>
+                                </span>
+                            </address>
+                        </div>
+                        <div class="padding40 box-rounded mb30" data-bgcolor="#F2F6FE">
                             <h3>MyCo X - Trillium Tower</h3>
                             <address class="s1">
                                 <span class="indent-list-2">
@@ -224,28 +252,6 @@
                                 <span>
                                     <i class="id-color fa fa-envelope-o fa-lg"></i><a
                                         href="mailto:Trillium.tower@my-co.space">Trillium.tower@my-co.space</a>
-                                </span>
-                            </address>
-                        </div>
-                        <div class="padding40 box-rounded mb30" data-bgcolor="#F2F6FE">
-                            <h3>MyCo X - Satoria Tower</h3>
-                            <address class="s1">
-                                <span class="indent-list-2">
-                                    <a href="https://maps.app.goo.gl/nMPFHXXyJjmJ7mYUA" style="color: #000">
-                                        <i class="id-color fa fa-map-marker fa-lg"></i>Jl. Pradah Jaya I No.1,
-                                        Pradahkalikendal, Kec. Dukuhpakis, Kota SBY Jawa Timur 60226
-                                    </a>
-                                </span>
-                                <span>
-                                    <a
-                                        href="https://api.whatsapp.com/send/?phone=6289633299494&text=Hallo+admin+MYCO+Indragiri....&type=phone_number&app_absent=0">
-                                        <i class="id-color fa fa-phone fa-lg"></i>+6289633299494
-                                    </a>
-                                </span>
-                                <span>
-                                    <i class="id-color fa fa-envelope-o fa-lg"></i><a
-                                        href="mailto:admin@my-co.space">Admin@my-co.space</a> & <a
-                                        href="mailto:mycospace.idn@gmail.com">Mycospace.idn@gmail.com</a>
                                 </span>
                             </address>
                         </div>

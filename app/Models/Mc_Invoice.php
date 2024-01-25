@@ -9,6 +9,8 @@ class Mc_Invoice extends Model
 {
     use HasFactory;
 
+    protected $table = 'mc_invoices';
+
     protected $primaryKey = 'invoice_id';
 
     protected $fillable = [
@@ -53,4 +55,14 @@ class Mc_Invoice extends Model
         'v_deletedby',
         'b_status',
     ];
+
+    public function booking()
+    {
+        return $this->belongsTo(Mc_Booking::class, 'fk_booking', 'booking_id');
+    }
+
+    public function details()
+    {
+        return $this->hasMany(Mc_InvoiceDetail::class, 'fk_invoice', 'invoice_id');
+    }
 }

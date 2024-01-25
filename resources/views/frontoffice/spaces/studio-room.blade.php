@@ -34,7 +34,7 @@
 
 
 @push('logo-black')
-    @include('frontoffice.layouts.logo-myco')
+    @include('frontoffice.layouts.logo-black')
 @endpush
 
 @push('header-alt')
@@ -100,7 +100,7 @@
                                 <div class="pricing-s1 mb30">
                                     <div class="top">
                                         <h2>Daily</h2>
-                                        <p class="plan-tagline">Best for personal</p>
+                                        {{-- <p class="plan-tagline">Best for personal</p> --}}
                                     </div>
                                     <div class="mid bg-color-secondary text-light">
                                         <p class="price">
@@ -132,13 +132,13 @@
                                 <div class="pricing-s1 mb30">
                                     <div class="top">
                                         <h2>Monthly</h2>
-                                        <p class="plan-tagline">Best for small group</p>
+                                        {{-- <p class="plan-tagline">Best for small group</p> --}}
                                     </div>
 
                                     <div class="mid bg-color-secondary text-light">
                                         <p class="price">
                                             <span class="currency">Rp</span>
-                                            <span class="m opt-1" style="font-size: 28px;">1.800.00</span>
+                                            <span class="m opt-1" style="font-size: 28px;">1.800.000</span>
                                             <span class="month">/month</span>
                                         </p>
                                     </div>

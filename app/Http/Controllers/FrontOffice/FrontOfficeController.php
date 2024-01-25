@@ -5,8 +5,10 @@ namespace App\Http\Controllers\FrontOffice;
 use App\Http\Controllers\Controller;
 use App\Mail\BookingMail;
 use App\Mail\PartnershipMail;
+use App\Models\Booking;
 use App\Models\Mc_Booking;
 use App\Models\Mc_Notification;
+use App\Models\Notification;
 use App\Models\SysCodeSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +22,7 @@ class FrontOfficeController extends Controller
     // USER BOOKING STORE
     public function addBooking(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         //define validation rules  
         $validator = Validator::make($request->all(), [
             'preference'            => 'required',
@@ -61,7 +63,7 @@ class FrontOfficeController extends Controller
 
         // Format Code
         $bookingCode = $sys->v_code . $sys->v_separator . date($sys->v_dateformat) . $sys->v_separator . sprintf("%0{$sys->i_digit}d", $newId);
-        // $sys->update(['i_count' => $sys->i_count + 1]);
+        $sys->update(['i_count' => $sys->i_count + 1]);
 
         // INSERT INTO MC_BOOKING TABLE
         $booking = Mc_Booking::updateOrCreate([
@@ -78,13 +80,16 @@ class FrontOfficeController extends Controller
             'dt_start'              => $request->date_start,
             'dt_tour'               => $request->date_tour,
             'v_name'                => $request->name,
-            'v_companyname'         => $request->company_name === null ? null : $request->company_name,
+            'v_companyname'         => $request->company_name === null ? '-' : $request->company_name,
             'v_email'               => $request->email,
             'v_phone'               => $request->phone,
             'v_notesleadbooking'    => $request->notes_lead_booking === null ? null : $request->notes_lead_booking,
             'v_notesleadstatus'     => $request->notes_lead_status === null ? '-' : $request->notes_lead_status,
             'b_membershipstatus'    => 0,
+            'b_leadstatus'          => 0,
             'v_createdby'           => 0,
+            // 'dt_updated'            => null,
+            // 'dt_deleted'            => null,
         ]);
 
         // INSERT INTO MC_NOTIFICATION
@@ -96,6 +101,8 @@ class FrontOfficeController extends Controller
             'v_spaces'      => $request->spaces,
             'v_description' => 'Ada booking baru dari ' . $request->name,
             'v_createdby'   => 0,
+            // 'dt_updated'    => null,
+            // 'dt_deleted'    => null,
         ]);
 
         // SEND MAIL
@@ -130,14 +137,31 @@ class FrontOfficeController extends Controller
 
         $emailAddress = $request->email;
 
-        Mail::to($emailAddress)->send(new BookingMail($details, $bccEmail, $bccName, $bccEmail2, $bccName2));
 
         //return response
-        return response()->json([
+        // return response()->json([
+        //     'success' => true,
+        //     'status'  => 200,
+        //     'message' => 'Booking berhasil terkirim!',
+        // ]);
+
+        // Mail::to($emailAddress)->send(new BookingMail($details, $bccEmail, $bccName, $bccEmail2, $bccName2));
+
+        //return response
+        $response = [
             'success' => true,
             'status'  => 200,
             'message' => 'Booking berhasil terkirim!',
-        ]);
+        ];
+
+        // Send email
+        Mail::to($emailAddress)->send(new BookingMail($details, $bccEmail, $bccName,
+            $bccEmail2,
+            $bccName2
+        ));
+
+        return response()->json($response);
+
     }
 
     // PARTNETSHIP STORE

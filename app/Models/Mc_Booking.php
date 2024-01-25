@@ -47,4 +47,15 @@ class Mc_Booking extends Model
     {
         return $this->belongsTo(Mc_Spaces::class, 'v_spaces', 'v_code');
     }
+
+    // Define relationships if any
+    public function member()
+    {
+        return $this->hasMany(Mc_Member::class, 'fk_booking', 'booking_id');
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Mc_Invoice::class, 'fk_booking', 'booking_id');
+    }
 }

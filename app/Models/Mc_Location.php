@@ -21,6 +21,7 @@ class Mc_Location extends Model
         'v_createdby',
         'v_updatedby',
         'v_deletedby',
+        'b_status'
     ];
 
     public function bookings()

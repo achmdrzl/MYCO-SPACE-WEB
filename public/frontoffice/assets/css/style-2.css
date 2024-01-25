@@ -593,7 +593,7 @@ header .header-col.mid .social-icons {
 #mainmenu {
     font-family: var(--title-font);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0 auto;
     float: none;
 }
@@ -697,7 +697,7 @@ header .header-col.mid .social-icons {
 
 #mainmenu li li {
     font-family: var(--body-font);
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #mainmenu li li:last-child {
@@ -5562,7 +5562,7 @@ i.font60 {
 .spinner>div {
     width: 18px;
     height: 18px;
-    background-color: #fff;
+    /* background-color: #fff; */
 
     border-radius: 100%;
     display: inline-block;
@@ -5621,7 +5621,7 @@ i.font60 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ffffff;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
     text-align: center;
 }
 
@@ -13994,7 +13994,7 @@ a.btn-search-big{
     padding: 20px;
     font-weight: bold;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 25px;
      border: solid 1px #ffffff;
 }
 

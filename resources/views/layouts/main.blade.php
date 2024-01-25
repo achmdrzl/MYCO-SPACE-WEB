@@ -40,11 +40,40 @@
     <link rel="stylesheet" href="{{ asset('backoffice/assets/css/demo1/style.css') }}" />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
+
+    <style>
+        .spinner-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Adjust the background color and opacity as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            /* Set a high z-index value to bring it to the front */
+        }
+
+        .spinner-border {
+            z-index: 10000;
+            /* Make sure the spinner itself has a higher z-index than its container */
+        }
+    </style>
+
     @stack('style-alt')
 </head>
 
 <body>
     <div class="main-wrapper">
+
+        <div class="spinner-container" style="display:none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
 
         <!-- partial:partials/_sidebar.html -->
         @include('layouts.sidebar')
@@ -69,16 +98,6 @@
                             Dark
                         </label>
                     </div>
-                </div>
-                <div class="theme-wrapper">
-                    <h6 class="text-muted mb-2">Light Theme:</h6>
-                    <a class="theme-item active" href="{{ asset('backoffice/demo1/dashboard.html') }}">
-                        <img src="{{ asset('backoffice/assets/images/screenshots/light.jpg') }}" alt="light theme">
-                    </a>
-                    <h6 class="text-muted mb-2">Dark Theme:</h6>
-                    <a class="theme-item" href="{{ asset('backoffice/demo2/dashboard.html') }}">
-                        <img src="{{ asset('backoffice/assets/images/screenshots/dark.jpg') }}" alt="light theme">
-                    </a>
                 </div>
             </div>
         </nav>

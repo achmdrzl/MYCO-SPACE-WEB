@@ -51,4 +51,14 @@ class Mc_Member extends Model
         'deleted_at',
         'b_status',
     ];
+
+    public function booking()
+    {
+        return $this->belongsTo(Mc_Booking::class, 'fk_booking', 'booking_id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Mc_Company::class, 'fk_company', 'company_id');
+    }
 }

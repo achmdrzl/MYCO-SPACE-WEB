@@ -28,7 +28,7 @@ class PartnershipMail extends Mailable
     public function build()
     {
         $mail = $this->from('admin@my-co.space', 'Admin - MyCo')
-        ->subject('My Mail')
+        ->subject('[MyCo] Submission Confirmation')
         ->view('email.partnershipEmail')
         ->bcc($this->bccEmail, $this->bccName);
 

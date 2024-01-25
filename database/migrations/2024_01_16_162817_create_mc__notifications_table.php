@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('v_deletedby', 200)->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->tinyInteger('b_status')->default(1)->comment('1=Active, 0=Inactive');
         });
     }
 

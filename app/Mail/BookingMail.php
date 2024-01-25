@@ -37,7 +37,7 @@ class BookingMail extends Mailable
     public function build()
     {
         return $this->from('admin@my-co.space', 'Admin - MyCo')
-        ->subject('My Mail')
+        ->subject('[MyCo] Booking Confirmation')
         ->view('email.bookingEmail')
         ->bcc($this->bccEmail, $this->bccName)
         ->bcc($this->bccEmail2, $this->bccName2);

@@ -138,6 +138,7 @@
                     </div>
                     <form class="forms-sample" id="bookingForm">
                         <input type="hidden" name="booking_id" id="booking_id">
+                        <h6 class="mb-4">Data Kuota</h6>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -157,16 +158,15 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Telepon</label>
-                                    <input type="text" class="form-control" id="phone" name="phone"
-                                        autocomplete="off" data-inputmask-alias="(+62) 99-999-999-999"
+                                    <input type="number" class="form-control" id="phone" name="phone"
                                         placeholder="Masukkan Telepon">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input class="form-control" id="email" name="email" autocomplete="off"
-                                        data-inputmask="'alias': 'email'" inputmode="email" placeholder="Masukkan Email">
+                                    <input class="form-control" id="email" name="email" type="email"
+                                        placeholder="Masukkan Email">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -186,6 +186,7 @@
                             </div>
                         </div>
                         <hr>
+                        <h6 class="mb-4">Data Booking</h6>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -262,6 +263,7 @@
                             </div>
                         </div>
                         <hr>
+                        <h6 class="mb-4">Lead Progress</h6>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -398,6 +400,7 @@
             $('#btn-create-booking').click(function() {
                 $('#submit-user').val("create-jenis");
                 $('#booking_id').val('');
+                $('.alert').hide();
                 $('#user_form').trigger("reset");
                 $('#bookingModalHeading').html("ADD NEW BOOKING DATA");
                 $('#bookingModal').modal('show');
@@ -420,11 +423,11 @@
 
                 // var option select to setting membership select option
                 var option = '<option selected disabled value="">-- Pilih Status Booking --</option>\
-                                                            <option value="0">Booking</option>\
-                                                            <option value="1">Follow Up</option>\
-                                                            <option value="2">Invoice</option>\
-                                                            <option value="3">Cancel</option>\
-                                                            <option value="5">Paid</option>';
+                                                                                <option value="0">Booking</option>\
+                                                                                <option value="1">Follow Up</option>\
+                                                                                <option value="2">Invoice</option>\
+                                                                                <option value="3">Cancel</option>\
+                                                                                <option value="5">Paid</option>';
 
                 $('#lead_status').html(option)
 
@@ -437,6 +440,7 @@
             $('#submit-booking').click(function(e) {
                 e.preventDefault();
                 $(this).html('Sending..');
+                $(".spinner-container").show();
 
                 $.ajax({
                     url: "{{ route('booking.layanan.store') }}",
@@ -456,6 +460,7 @@
                                     '</li></strong>');
                             });
                             $('#submit-booking').html('Save changes');
+                            $(".spinner-container").hide();
 
                         } else {
                             $('.alert-danger').hide();
@@ -473,11 +478,16 @@
                                 title: `${response.message}`,
                             });
                             $('#submit-booking').html('Save changes');
+                            $(".spinner-container").hide();
                             $('#bookingModal').modal('hide');
 
                             datatable.draw();
 
                         }
+                    },
+                    error: function(error) {
+                        console.log(error);
+                        $(".spinner-container").hide(); // Ensure preloader is hidden in case of an error
                     }
                 });
             });
@@ -499,39 +509,50 @@
                         $('#bookingForm').trigger("reset");
                         $('#bookingModalHeading').html("EDIT DATA BOOKING");
                         $('#bookingModal').modal('show');
-                        $('#booking_id').val(response.booking_id);
+                        $('#booking_id').val(response.id);
                         $('#name').val(response.name).attr('disabled', false)
                         $('#email').val(response.email).attr('disabled', false)
                         $('#company_name').val(response.company_name).attr('disabled', false)
                         $('#phone').val(response.phone).attr('disabled', false)
                         $('#occupation').val(response.occupation).attr('disabled', false)
-                        $('#date_start').val(formatCustomDate(response.date_start)).attr('disabled', false)
-                        $('#date_tour').val(formatCustomDate(response.date_tour)).attr('disabled', false)
+
+                        if (response.date_tour) {
+                            $('#date_tour').val(formatCustomDate(response.date_tour)).attr(
+                                'disabled', false)
+                        }
+
+                        $('#date_start').val(formatCustomDate(response.date_start)).attr(
+                            'disabled', false)
                         $('#preference').val(response.preference).attr('disabled', false)
                         $('#location').val(response.location).attr('disabled', false)
                         $('#spaces').val(response.spaces).attr('disabled', false)
                         $('#people').val(response.people).attr('disabled', false)
                         $('#city').val(response.city).attr('disabled', false)
-                        $('#membership_status').val(response.membership_status).attr('disabled', false)
-                        $('#notes_lead_booking').val(response.notes_lead_booking).attr('disabled', false)
-                        $('#notes_lead_status').val(response.notes_lead_status).attr('disabled', false)
+                        $('#membership_status').val(response.membership_status).attr('disabled',
+                            false)
+                        $('#notes_lead_booking').val(response.notes_lead_booking).attr(
+                            'disabled', false)
+                        $('#notes_lead_status').val(response.notes_lead_status).attr('disabled',
+                            false)
 
                         // var option select to setting membership select option
                         var option =
                             '<option selected disabled>-- Pilih Status Booking --</option>';
                         if (response.membership_status === 1) {
-                            option += '<option value="0">Booking</option>\
-                                                                                <option value="1">Follow Up</option>\
-                                                                                <option value="2">Invoice</option>\
-                                                                                <option value="3">Cancel</option>\
-                                                                                <option value="4">Deal</option>\
-                                                                                <option value="5">Paid</option>';
+                            option +=
+                                '<option value="0">Booking</option>\
+                                                                                                    <option value="1">Follow Up</option>\
+                                                                                                    <option value="2">Invoice</option>\
+                                                                                                    <option value="3">Cancel</option>\
+                                                                                                    <option value="4">Deal</option>\
+                                                                                                    <option value="5">Paid</option>';
                         } else {
-                            option += '<option value="0">Booking</option>\
-                                                                                <option value="1">Follow Up</option>\
-                                                                                <option value="2">Invoice</option>\
-                                                                                <option value="3">Cancel</option>\
-                                                                                <option value="5">Paid</option>';
+                            option +=
+                                '<option value="0">Booking</option>\
+                                                                                                    <option value="1">Follow Up</option>\
+                                                                                                    <option value="2">Invoice</option>\
+                                                                                                    <option value="3">Cancel</option>\
+                                                                                                    <option value="5">Paid</option>';
                         }
                         $('#lead_status').html(option)
 
@@ -565,35 +586,42 @@
                         $('#company_name').val(response.company_name).attr('disabled', true)
                         $('#phone').val(response.phone).attr('disabled', true)
                         $('#occupation').val(response.occupation).attr('disabled', true)
-                        $('#date_start').val(formatCustomDate(response.date_start)).attr('disabled', true)
-                        if(response.date_tour){
-                            $('#date_tour').val(formatCustomDate(response.date_tour)).attr('disabled', true)
+                        $('#date_start').val(formatCustomDate(response.date_start)).attr(
+                            'disabled', true)
+                        if (response.date_tour) {
+                            $('#date_tour').val(formatCustomDate(response.date_tour)).attr(
+                                'disabled', true)
                         }
                         $('#preference').val(response.preference).attr('disabled', true)
                         $('#location').val(response.location).attr('disabled', true)
                         $('#spaces').val(response.spaces).attr('disabled', true)
                         $('#people').val(response.people).attr('disabled', true)
                         $('#city').val(response.city).attr('disabled', true)
-                        $('#membership_status').val(response.membership_status).attr('disabled', true)
-                        $('#notes_lead_booking').val(response.notes_lead_booking).attr('disabled', true)
-                        $('#notes_lead_status').val(response.notes_lead_status).attr('disabled', true)
+                        $('#membership_status').val(response.membership_status).attr('disabled',
+                            true)
+                        $('#notes_lead_booking').val(response.notes_lead_booking).attr(
+                            'disabled', true)
+                        $('#notes_lead_status').val(response.notes_lead_status).attr('disabled',
+                            true)
 
                         // var option select to setting membership select option
                         var option =
                             '<option selected disabled>-- Pilih Status Booking --</option>';
                         if (response.membership_status === 1) {
-                            option += '<option value="0">Booking</option>\
-                                                                                <option value="1">Follow Up</option>\
-                                                                                <option value="2">Invoice</option>\
-                                                                                <option value="3">Cancel</option>\
-                                                                                <option value="4">Deal</option>\
-                                                                                <option value="5">Paid</option>';
+                            option +=
+                                '<option value="0">Booking</option>\
+                                                                                                    <option value="1">Follow Up</option>\
+                                                                                                    <option value="2">Invoice</option>\
+                                                                                                    <option value="3">Cancel</option>\
+                                                                                                    <option value="4">Deal</option>\
+                                                                                                    <option value="5">Paid</option>';
                         } else {
-                            option += '<option value="0">Booking</option>\
-                                                                                <option value="1">Follow Up</option>\
-                                                                                <option value="2">Invoice</option>\
-                                                                                <option value="3">Cancel</option>\
-                                                                                <option value="5">Paid</option>';
+                            option +=
+                                '<option value="0">Booking</option>\
+                                                                                                    <option value="1">Follow Up</option>\
+                                                                                                    <option value="2">Invoice</option>\
+                                                                                                    <option value="3">Cancel</option>\
+                                                                                                    <option value="5">Paid</option>';
                         }
                         $('#lead_status').html(option)
 
@@ -736,6 +764,9 @@
                             // Hide the loading state
                             $('#datatable').removeClass('loading');
 
+                            // Close the accordion by collapsing it
+                            $("#collapseTwo").collapse("hide");
+
                         } else {
                             Swal.fire({
                                 icon: 'error',
@@ -752,6 +783,11 @@
 
             // RESTART FILTER
             $('body').on('click', '#restart-date', function() {
+                var filter_location = $('#filter_location').val('');
+                var filter_spaces = $('#filter_spaces').val('');
+                var startDate = $('#startDate').val('');
+                var endDate = $('#endDate').val('');
+
                 // Destroy the existing DataTable
                 datatable.destroy();
                 // DISPLAY TRANSAKSI PEMBELIAN
@@ -796,6 +832,9 @@
                     ],
                     columnDefs: columnDefs,
                 });
+
+                // Close the accordion by collapsing it
+                $("#collapseTwo").collapse("hide");
             })
 
         })

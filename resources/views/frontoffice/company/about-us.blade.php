@@ -48,21 +48,21 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-4 wow fadeInRight mb30" data-wow-delay=".1s">
                         <div class="de_count s2 text-center">
-                            <h3><span>75</span>+</h3>
-                            <h5 class="id-color">Our Rooms</h5>
+                            <h3><span>511</span>+</h3>
+                            <h5 class="id-color">Happy Customers</h5>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-4 wow fadeInRight mb30" data-wow-delay=".4s">
                         <div class="de_count s2 text-center">
-                            <h3><span>589</span>+</h3>
-                            <h5 class="id-color">Happy Customers</h5>
+                            <h3><span>313</span>+</h3>
+                            <h5 class="id-color">Happy Subscribers</h5>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-4 wow fadeInRight mb30" data-wow-delay=".7s">
                         <div class="de_count s2 text-center">
-                            <h3><span>4</span></h3>
+                            <h3><span>3</span></h3>
                             <h5 class="id-color">Year Experiences</h5>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center">
                         <h3>We're proud to list some of the world's most mind-blowing spaces.</h3>
-                        <p class="w-100">Enriches the work experience by providing access to a flexible and collaborative environment. With these facilities, innovation and creativity naturally flourish, enabling a dynamic exchange of ideas. Create inclusive communities, strengthen professional networks, and facilitate business growth through easy and open collaboration</p>
+                        {{-- <p class="w-100">Enriches the work experience by providing access to a flexible and collaborative environment. With these facilities, innovation and creativity naturally flourish, enabling a dynamic exchange of ideas. Create inclusive communities, strengthen professional networks, and facilitate business growth through easy and open collaboration</p> --}}
                     </div>
                     <div class="spacer-10"></div>
                     <div class="col-md-12">

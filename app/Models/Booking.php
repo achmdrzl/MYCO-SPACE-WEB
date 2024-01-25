@@ -9,9 +9,9 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $table = 'mc_bookings';
+    protected $table = 'mc_booking';
 
-    protected $primaryKey = 'booking_id';
+    protected $primaryKey = 'i_code';
 
     protected $fillable = [
         'v_code',
@@ -34,7 +34,27 @@ class Booking extends Model
         'v_createdby',
         'v_updatedby',
         'v_deletedby',
-        'deleted_at',
+        'dt_created',
+        'dt_updated',
+        'dt_deleted',
         'b_status',
+    ];
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
+     * The names of the columns that represent dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'dt_created', // instead of created_at
+        'dt_updated', // instead of updated_at
+        'dt_deleted', // instead of deleted_at
     ];
 }

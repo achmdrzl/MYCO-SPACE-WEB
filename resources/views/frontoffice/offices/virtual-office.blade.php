@@ -374,9 +374,9 @@
                                             </tr>
                                             <tr>
                                                 <th class="center-align" style="font-size: 25px;">PRICE LIST</th>
-                                                <th class="bronze center-align">IDR 4.500.000</th>
-                                                <th class="silver center-align">IDR 6.500.000</th>
-                                                <th class="gold center-align">IDR 7.500.000</th>
+                                                <th class="bronze center-align">IDR <br> 4.500.000</th>
+                                                <th class="silver center-align">IDR <br> 6.500.000</th>
+                                                <th class="gold center-align">IDR <br> 7.500.000</th>
                                             </tr>
                                         </thead>
                                         <tbody>

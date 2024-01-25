@@ -1,11 +1,19 @@
 <?php
 
 use App\Http\Controllers\Backoffice\LayananController;
+use App\Http\Controllers\Backoffice\NotificationsController;
+use App\Http\Controllers\Backoffice\RegistrationController;
+use App\Http\Controllers\Backoffice\SettingsController;
 use App\Http\Controllers\BackOffice\UsersController;
 use App\Http\Controllers\FrontOffice\FrontOfficeController;
 use App\Http\Controllers\ProfileController;
 use App\Mail\MyMail;
 use App\Models\Mc_Booking;
+use App\Models\Mc_Company;
+use App\Models\Mc_Member;
+use App\Models\Mc_Notification;
+use App\Models\Mc_Overtime;
+use App\Models\Mc_Quota;
 use App\Models\SysCodeSetting;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -69,20 +77,26 @@ Route::post('/add-booking', FrontOfficeController::class . '@AddBooking')->name(
 
 
 Route::get('/cekRelasi', function () {
-    // GET SYSTEM SETTING FOR UNIQUR CODE EACH TABLE
-    $sys = SysCodeSetting::where('v_table', 'mc_booking')->first();
 
-    // GET LAST ID
-    $lastBooking = Mc_Booking::latest()->first();
-    $lastId = ($lastBooking) ? $lastBooking->booking_id : 0;
+    $query = Mc_Notification::select(
+        'notification_id as id',
+        'v_subject as subject',
+        'v_location as locations',
+        'v_spaces as spaces',
+        'v_description as description',
+        'mc_notifications.created_at as date',
+        'mc_spaces.v_name as space',
+        'mc_locations.v_name as location'
+    )
+        ->where('mc_notifications.b_status', 1)
+        ->join('mc_spaces', 'mc_notifications.v_spaces', '=', 'mc_spaces.v_code')
+        ->join('mc_locations', 'mc_notifications.v_location', '=', 'mc_locations.v_code')
+        ->orderByDesc('mc_notifications.created_at')
+        ->limit(5)
+        ->get();
 
-    // Increment the last ID to get a new ID
-    $newId = $lastId + 1;
 
-    // Format Code
-    $bookingCode = $sys->v_code . $sys->v_separator . date($sys->v_dateformat) . $sys->v_separator . sprintf("%0{$sys->i_digit}d", $newId);
-
-    return $bookingCode;
+    return $query;
 });
 
 Route::get('/dashboard', function () {
@@ -109,6 +123,44 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/bookingedit', LayananController::class . '@bookingEdit')->name('booking.layanan.edit');
     Route::post('/bookingDestroy', LayananController::class . '@bookingDestroy')->name('booking.destroy');
     Route::post('/sortingBooking', LayananController::class . '@sortingBooking')->name('sorting.booking');
+    
+    Route::get('/overtime', LayananController::class . '@overtimeIndex')->name('overtime.index');
+    Route::post('/overtimeStore', LayananController::class . '@overtimeStore')->name('overtime.store');
+    Route::post('/overtimeEdit', LayananController::class . '@overtimeEdit')->name('overtime.edit');
+    Route::post('/overtimeDestroy', LayananController::class . '@overtimeDestroy')->name('overtime.destroy');
+    Route::post('/getCompany', LayananController::class. '@getCompany')->name('get.company');
+    Route::post('/overtimeSorting', LayananController::class . '@overtimeSorting')->name('overtime.sorting');
+
+    // REGISTRATION ROUTES
+    Route::get('/company', RegistrationController::class. '@companyIndex')->name('company.index');
+    Route::post('/companyStore', RegistrationController::class. '@companyStore')->name('company.store');
+    Route::post('/companyEdit', RegistrationController::class. '@companyEdit')->name('company.edit');
+    Route::post('/companyDestroy', RegistrationController::class. '@companyDestroy')->name('company.destroy');
+    Route::post('/companySorting', RegistrationController::class. '@companySorting')->name('company.sorting');
+
+    Route::get('/member', RegistrationController::class. '@memberIndex')->name('member.index');
+    Route::post('/memberStore', RegistrationController::class. '@memberStore')->name('member.store');
+    Route::post('/memberEdit', RegistrationController::class. '@memberEdit')->name('member.edit');
+    Route::post('/memberDestroy', RegistrationController::class. '@memberDestroy')->name('member.destroy');
+    Route::post('/memberSorting', RegistrationController::class. '@memberSorting')->name('member.sorting');
+    
+    Route::get('/non-member', RegistrationController::class. '@non_memberIndex')->name('non-member.index');
+    Route::post('/non-memberStore', RegistrationController::class. '@non_memberStore')->name('non-member.store');
+    Route::post('/non-memberEdit', RegistrationController::class. '@non_memberEdit')->name('non-member.edit');
+    Route::post('/non-memberDestroy', RegistrationController::class. '@non_memberDestroy')->name('non-member.destroy');
+    Route::post('/non-memberSorting', RegistrationController::class. '@non_memberSorting')->name('non-member.sorting');
+
+    // SETTINGS ROUTE
+    Route::get('/quotaMember', SettingsController::class . '@quotaMemberIndex')->name('quotaMember.index');
+    Route::post('/quotaMemberStore', SettingsController::class . '@quotaMemberStore')->name('quotaMember.store');
+    Route::post('/quotaMemberEdit', SettingsController::class . '@quotaMemberEdit')->name('quotaMember.edit');
+    Route::post('/quotaMemberDestroy', SettingsController::class . '@quotaMemberDestroy')->name('quotaMember.destroy');
+
+    // NOTIFICATIONS ROUTE
+    Route::get('/notifications', NotificationsController::class . '@notificationsIndex')->name('notifications.index');
+    Route::post('/navbarnotifications', NotificationsController::class . '@navbarNotifications')->name('navbar.notifications');
+
+
 
     Route::get('send-mail', function () {
 
