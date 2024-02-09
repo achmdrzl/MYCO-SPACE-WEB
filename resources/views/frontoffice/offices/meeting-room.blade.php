@@ -1,6 +1,18 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+
+    <meta name="title" content="Sewa Meeting Room Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('meeting.room') }}">
+    <meta content="Ruang meeting yang layak dan cozy merupakan salah satu kunci kesuksesan pertemuan Anda dengan client, presentasi proposal, dan dealing secara profesional. Fokuslah pada meeting penting Anda dan biarkan kami yang support ruang meeting untuk Anda." name="description">
+    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room" name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Meeting Room Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('meeting.room') }}" />
+    <meta property="og:description" content="Ruang meeting yang layak dan cozy merupakan salah satu kunci kesuksesan pertemuan Anda dengan client, presentasi proposal, dan dealing secara profesional. Fokuslah pada meeting penting Anda dan biarkan kami yang support ruang meeting untuk Anda.">
+    <meta property="og:site_name" content="Sewa Meeting Room Surabaya Jakarta Indonesia | MyCo" />
+
     <style>
         .indented-list li {
             margin-left: 10px;

@@ -56,22 +56,43 @@ $(function() {
       },
       series: [
         {
-          name: "Data a",
+          name: "Private Office",
           data: [45, 52, 38, 45]
         },
         {
-          name: "Data b",
+          name: "Virtual Office",
           data: [12, 42, 68, 33]
         },
         {
           name:
-            "Data c",
-          data: [8, 32, 48, 53]
-        }
+            "Manage Office",
+          data: [11, 22, 58, 63]
+        },
+        {
+          name:
+            "Hot Desk",
+          data: [5, 32, 28, 43]
+        },
+        {
+          name:
+            "Dedicated Desk",
+          data: [2, 72, 68, 13]
+        },
+        {
+          name:
+            "Event Space",
+          data: [6, 22, 48, 73]
+        },
+        {
+          name:
+            "Meeting Room",
+          data: [8, 42, 48, 23]
+        },
+        
       ],
       xaxis: {
         type: "datetime",
-        categories: ["2015", "2016", "2017", "2018"],
+        categories: ["2020", "2021", "2022", "2023"],
         lines: {
           show: true
         },
@@ -434,7 +455,7 @@ $(function() {
       stroke: {
         colors: ['rgba(0,0,0,0)']
       },
-      colors: [colors.primary,colors.warning,colors.danger, colors.info],
+      colors: [colors.primary,colors.warning,colors.danger, colors.info, colors.secondary],
       legend: {
         show: true,
         position: "top",
@@ -448,7 +469,8 @@ $(function() {
       dataLabels: {
         enabled: false
       },
-      series: [44, 55, 13, 33]
+      series: [44, 55, 13, 33, 9],
+      labels: ["Indragiri", "CW", "Trillium Tower", "Satoria Tower", "Jakarta"] // Update category labels here
     };
 
     var chart = new ApexCharts(document.querySelector("#apexDonut"), options);

@@ -62,11 +62,11 @@ class RegistrationController extends Controller
                 })
                 ->addColumn('action', function ($item) {
 
-                    $btn = '<button id="detail-company" data-id="' . $item->company_id . '" title="Detail Company" class="btn btn-secondary btn-sm show-company me-2"><i class="mdi mdi-eye"></i> View</button>';
+                    $btn = '<button id="detail-company" data-id="' . $item->company_id . '" title="Detail Company" class="btn btn-secondary btn-sm show-company me-2 m-1"><i class="mdi mdi-eye"></i> View</button>';
 
-                    $btn = $btn . '<button id="edit-company" data-id="' . $item->company_id . '" title="Edit Company" class="btn btn-primary btn-sm edit-company me-2"><i class="mdi mdi-pencil"></i> Edit</button>';
+                    $btn = $btn . '<button id="edit-company" data-id="' . $item->company_id . '" title="Edit Company" class="btn btn-primary btn-sm edit-company me-2 m-1"><i class="mdi mdi-pencil"></i> Edit</button>';
 
-                    $btn = $btn . '<button id="delete-company" data-id="' . $item->company_id . '" title="Delete Company" class="btn btn-danger btn-sm delete-company text-light"><i class="mdi mdi-delete"></i> Delete</button>';
+                    $btn = $btn . '<button id="delete-company" data-id="' . $item->company_id . '" title="Delete Company" class="btn btn-danger btn-sm delete-company text-light m-1"><i class="mdi mdi-delete"></i> Delete</button>';
 
                     return $btn;
                 })

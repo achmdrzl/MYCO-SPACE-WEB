@@ -35,7 +35,7 @@
                             <a href="{{ route('overtime.index') }}" class="nav-link">Overtime</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/ui-components/badges.html" class="nav-link">Booking Fasilitas</a>
+                            <a href="{{ route('bookingFasilitas.index') }}" class="nav-link">Booking Fasilitas</a>
                         </li>
                     </ul>
                 </div>
@@ -56,7 +56,7 @@
                             <a href="{{ route('member.index') }}" class="nav-link">Member</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('non-member.index') }}" class="nav-link">Non-Member</a>
+                            <a href="{{ route('nonmember.index') }}" class="nav-link">Non-Member</a>
                         </li>
                     </ul>
                 </div>
@@ -71,13 +71,13 @@
                 <div class="collapse" id="keuangan">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="pages/ui-components/accordion.html" class="nav-link">Layanan</a>
+                            <a href="{{ route('invoicelayanan.index') }}" class="nav-link">Layanan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/ui-components/alerts.html" class="nav-link">Deposit</a>
+                            <a href="{{ route('invoicedeposit.index') }}" class="nav-link">Deposit</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/ui-components/badges.html" class="nav-link">Overtime</a>
+                            <a href="{{ route('invoiceovertime.index') }}" class="nav-link">Overtime</a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/ui-components/badges.html" class="nav-link">Pelunasan Invoice</a>

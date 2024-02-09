@@ -24,22 +24,22 @@
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/fullcalendar/main.min.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/core/core.css') }}" />
-    <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/flatpickr/flatpickr.min.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/flatpickr/flatpickr.min.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/sweetalert2/sweetalert2.min.css') }}" />
     <link rel="stylesheet"
         href="{{ asset('backoffice/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}" />
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/select2/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/jquery-tags-input/jquery.tagsinput.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/dropzone/dropzone.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/dropify/dist/dropify.min.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/dropzone/dropzone.min.css') }}" /> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/dropify/dist/dropify.min.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/pickr/themes/classic.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('backoffice/assets/vendors/font-awesome/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('backoffice/assets/css/demo1/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('backoffice/assets/fonts/feather-font/css/iconfont.css') }}" />
-    <link rel="stylesheet" href="{{ asset('backoffice/assets/css/demo1/style.css') }}" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
+    {{-- <link rel="stylesheet" href="{{ asset('backoffice/assets/css/demo1/style.css') }}" /> --}}
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
         .spinner-container {
@@ -127,12 +127,14 @@
 
     @stack('script-alt')
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
     <script src="{{ asset('backoffice/assets/vendors/core/core.js') }}"></script>
     <script src="{{ asset('backoffice/assets/js/flatpickr.js') }}"></script>
-    <script src="{{ asset('backoffice/assets/vendors/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('backoffice/assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
+    {{-- <script src="{{ asset('backoffice/assets/vendors/flatpickr/flatpickr.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('backoffice/assets/vendors/apexcharts/apexcharts.min.js') }}"></script> --}}
     <script src="{{ asset('backoffice/assets/vendors/datatables.net/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('backoffice/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js') }}"></script>
     <script src="{{ asset('backoffice/assets/vendors/moment/moment.min.js') }}"></script>
@@ -149,19 +151,27 @@
     <script src="{{ asset('backoffice/assets/vendors/select2/select2.min.js') }}"></script>
     <script src="{{ asset('backoffice/assets/vendors/typeahead.js/typeahead.bundle.min.js') }}"></script>
     <script src="{{ asset('backoffice/assets/vendors/jquery-tags-input/jquery.tagsinput.min.js') }}"></script>
-    <script src="{{ asset('backoffice/assets/vendors/dropzone/dropzone.min.js') }}"></script>
-    <script src="{{ asset('backoffice/assets/vendors/dropify/dist/dropify.min.js') }}"></script>
+    {{-- <script src="{{ asset('backoffice/assets/vendors/dropzone/dropzone.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('backoffice/assets/vendors/dropify/dist/dropify.min.js') }}"></script> --}}
     <script src="{{ asset('backoffice/assets/vendors/moment/moment.min.js') }}"></script>
     <script src="{{ asset('backoffice/assets/js/bootstrap-maxlength.js') }}"></script>
     <script src="{{ asset('backoffice/assets/js/inputmask.js') }}"></script>
     <script src="{{ asset('backoffice/assets/js/select2.js') }}"></script>
     <script src="{{ asset('backoffice/assets/js/typeahead.js') }}"></script>
     <script src="{{ asset('backoffice/assets/js/tags-input.js') }}"></script>
-    <script src="{{ asset('backoffice/assets/js/dropzone.js') }}"></script>
-    <script src="{{ asset('backoffice/assets/js/dropify.js') }}"></script>
+    {{-- <script src="{{ asset('backoffice/assets/js/dropzone.js') }}"></script> --}}
+    {{-- <script src="{{ asset('backoffice/assets/js/dropify.js') }}"></script> --}}
     <script src="{{ asset('backoffice/assets/vendors/feather-icons/feather.min.js') }}"></script>
 
     <script src="{{ asset('backoffice/assets/vendors/fullcalendar/main.min.js') }}"></script>
+
+    <!-- Custom js for this page -->
+  <script src="{{ asset('backoffice/assets/js/apexcharts-light.js') }}"></script>
+	<!-- End custom js for this page -->
+    <!-- Plugin js for this page -->
+	<script src="{{ asset('backoffice/assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
+	<!-- End plugin js for this page -->
+
 
 </body>
 

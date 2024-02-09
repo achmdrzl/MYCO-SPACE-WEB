@@ -1,6 +1,18 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+
+    <meta name="title" content="Sewa Coworking Space Bulanan Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('dedicated.desk') }}">
+    <meta content="Coworking space bulanan untuk Anda mengerjakan tugas, bekerja dan berkembang dalam komunitas. Cocok bagi Anda yang membutuhkan tempat rutin setiap hari yang nyaman untuk menyelesaikan tugas dan pekerjaan." name="description">
+    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room" name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Coworking Space Bulanan Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('dedicated.desk') }}" />
+    <meta property="og:description" content="Coworking space bulanan untuk Anda mengerjakan tugas, bekerja dan berkembang dalam komunitas. Cocok bagi Anda yang membutuhkan tempat rutin setiap hari yang nyaman untuk menyelesaikan tugas dan pekerjaan.">
+    <meta property="og:site_name" content="Sewa Coworking Space Bulanan Surabaya Jakarta Indonesia | MyCo" />
+
     <style>
         .indented-list li {
             margin-left: 10px;
@@ -24,24 +36,6 @@
         }
 
         .indented-list-2 li:first-line {
-            text-indent: 0;
-            /* Setel ulang text-indent untuk baris pertama */
-            margin-left: 30px;
-            /* Atur indent tambahan untuk baris pertama */
-        }
-    </style>
-@endpush
-
-@push('style-alt')
-    <style>
-        .indented-list li {
-            margin-left: 10px;
-            /* Atur indent yang diinginkan */
-            text-indent: -13px;
-            /* Sesuaikan sesuai desain Anda */
-        }
-
-        .indented-list li:first-line {
             text-indent: 0;
             /* Setel ulang text-indent untuk baris pertama */
             margin-left: 30px;

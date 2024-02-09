@@ -1,6 +1,18 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+
+    <meta name="title" content="Sewa Studio Room Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('studio.index') }}">
+    <meta content="Ruangan kedap suara dan di design untuk penggunaan pribadi bagi para content creator dan youtuber seperti Anda karena kami paham bahwa konten yang berkualitas merupakan hal yang mendasar." name="description">
+    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room" name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Studio Room Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('studio.index') }}" />
+    <meta property="og:description" content="Ruangan kedap suara dan di design untuk penggunaan pribadi bagi para content creator dan youtuber seperti Anda karena kami paham bahwa konten yang berkualitas merupakan hal yang mendasar.">
+    <meta property="og:site_name" content="Sewa Studio Room Surabaya Jakarta Indonesia | MyCo" />
+
     <style>
         .indented-list li {
             margin-left: 10px;

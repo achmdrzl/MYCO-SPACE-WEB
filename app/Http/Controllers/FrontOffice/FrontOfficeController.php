@@ -22,7 +22,6 @@ class FrontOfficeController extends Controller
     // USER BOOKING STORE
     public function addBooking(Request $request)
     {
-        // dd($request->all());
         //define validation rules  
         $validator = Validator::make($request->all(), [
             'preference'            => 'required',
@@ -136,16 +135,6 @@ class FrontOfficeController extends Controller
         $bccEmail2     = 'admin@my-co.space';
 
         $emailAddress = $request->email;
-
-
-        //return response
-        // return response()->json([
-        //     'success' => true,
-        //     'status'  => 200,
-        //     'message' => 'Booking berhasil terkirim!',
-        // ]);
-
-        // Mail::to($emailAddress)->send(new BookingMail($details, $bccEmail, $bccName, $bccEmail2, $bccName2));
 
         //return response
         $response = [

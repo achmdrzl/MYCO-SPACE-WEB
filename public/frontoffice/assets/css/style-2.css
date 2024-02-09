@@ -13570,7 +13570,7 @@ header.smaller,
     right: auto;
 }
 
-.carousel-control-next-icon:after, 
+/* .carousel-control-next-icon:after, 
 .carousel-control-prev-icon:after{
     font-family: FontAwesome;
     content: "\f104";
@@ -13579,7 +13579,7 @@ header.smaller,
 
 .carousel-control-next-icon:after{
     content: "\f105";
-}
+} */
 
 .de-event-item{
     position: relative;
@@ -14447,14 +14447,14 @@ a.btn-slider:hover {
         background-position: center center;
       }
 
-      #de-carousel .carousel-control-prev-icon:after{
+      /* #de-carousel .carousel-control-prev-icon:after{
         content: '\f104';
         font-family: "FontAwesome";
       }
       #de-carousel .carousel-control-next-icon:after{
         content: '\f105';
         font-family: "FontAwesome";
-      }
+      } */
 
       #de-carousel .carousel-indicators [data-mdb-target]{
         width: 8px;

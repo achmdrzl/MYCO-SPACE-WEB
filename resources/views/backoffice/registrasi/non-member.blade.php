@@ -19,7 +19,7 @@
 @section('content')
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('non-member.index') }}">Registrasi</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('nonmember.index') }}">Registrasi</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data Non Member</li>
         </ol>
     </nav>
@@ -238,7 +238,7 @@
                 processing: true,
                 serverSide: true,
                 autoWidth: false,
-                ajax: "{{ route('non-member.index') }}",
+                ajax: "{{ route('nonmember.index') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex'
@@ -277,7 +277,7 @@
                 $(".spinner-container").show();
 
                 $.ajax({
-                    url: "{{ route('non-member.store') }}",
+                    url: "{{ route('nonmember.store') }}",
                     data: new FormData(this.form),
                     cache: false,
                     processData: false,
@@ -334,7 +334,7 @@
                 $('.alert').hide();
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('non-member.edit') }}",
+                    url: "{{ route('nonmember.edit') }}",
                     data: {
                         member_id: member_id
                     },
@@ -382,7 +382,7 @@
                 $('.alert').hide();
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('non-member.edit') }}",
+                    url: "{{ route('nonmember.edit') }}",
                     data: {
                         member_id: member_id
                     },
@@ -457,7 +457,7 @@
                         if (result.value) {
                             $.ajax({
                                 type: "POST",
-                                url: "{{ route('non-member.destroy') }}",
+                                url: "{{ route('nonmember.destroy') }}",
                                 data: {
                                     member_id: member_id,
                                 },
@@ -497,7 +497,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('non-member.sorting') }}",
+                    url: "{{ route('nonmember.sorting') }}",
                     data: {
                         filter_location: filter_location,
                         filter_spaces: filter_spaces,
@@ -574,7 +574,7 @@
                     autoWidth: false,
                     processing: true,
                     serverSide: true,
-                    ajax: "{{ route('non-member.index') }}",
+                    ajax: "{{ route('nonmember.index') }}",
                     columns: [{
                             data: 'DT_RowIndex',
                             name: 'DT_RowIndex'

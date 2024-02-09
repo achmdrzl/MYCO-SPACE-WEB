@@ -100,10 +100,11 @@
                      var notif = ''
 
                      $.each(response.data, function(index, value) {
-                         const subject = value['subject']
-                         const location = value['location']
-                         const space = value['space']
-                         const date = value['date']
+                         const subject         = value['subject']
+                         const location        = value['location']
+                         const space           = value['space']
+                         const date            = value['date']
+                         const description     = value['description']
 
                          notif += `<a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
                                         <div
@@ -114,6 +115,7 @@
                                             <p>${subject} [${location}]</p>
                                             <p>Layanan ${space}</p>
                                             <p class="tx-12 text-muted">${date}</p>
+                                            <p class="tx-12 text-muted">${description}</p>
                                         </div>
                                     </a>`;
 

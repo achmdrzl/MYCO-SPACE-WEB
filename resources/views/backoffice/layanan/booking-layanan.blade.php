@@ -242,7 +242,7 @@
                                         <option value="1-3">1-3</option>
                                         <option value="4-7">4-7</option>
                                         <option value="8-10">8-10</option>
-                                        <option value=">10">>10</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </div>
                             </div>

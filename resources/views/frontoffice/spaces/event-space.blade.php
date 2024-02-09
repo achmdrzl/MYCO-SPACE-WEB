@@ -1,6 +1,22 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+    <meta name="title" content="Sewa Event Space Komunitas Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('event.index') }}">
+    <meta
+        content="Punya rencana untuk mengadakan acara komunitas? Ruangan di MyCo fleksibel untuk dimodifikasi sesuai kebutuhan event Anda, yuk kunjungi MyCo dan MyCo X."
+        name="description">
+    <meta
+        content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room"
+        name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Event Space Komunitas Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('event.index') }}" />
+    <meta property="og:description"
+        content="Punya rencana untuk mengadakan acara komunitas? Ruangan di MyCo fleksibel untuk dimodifikasi sesuai kebutuhan event Anda, yuk kunjungi MyCo dan MyCo X.">
+    <meta property="og:site_name" content="Sewa Event Space Komunitas Surabaya Jakarta Indonesia | MyCo" />
+
     <style>
         .indented-list li {
             margin-left: 10px;

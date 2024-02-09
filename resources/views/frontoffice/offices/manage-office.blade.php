@@ -1,6 +1,18 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+
+    <meta name="title" content="Sewa Manage Office Tailor Made Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('manage.office') }}">
+    <meta content="Ruang kerja on-demand yang luas di desain khusus sesuai kebutuhan perusahaan Anda, kini Anda bisa fokus pada perkembangan bisnis Anda dan biarkan kami support dengan mengelola fasilitas di kantor Anda. Cocok untuk perusahaan skala menengah dan besar." name="description">
+    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room" name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Manage Office Tailor Made Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('manage.office') }}" />
+    <meta property="og:description" content="Ruang kerja on-demand yang luas di desain khusus sesuai kebutuhan perusahaan Anda, kini Anda bisa fokus pada perkembangan bisnis Anda dan biarkan kami support dengan mengelola fasilitas di kantor Anda. Cocok untuk perusahaan skala menengah dan besar.">
+    <meta property="og:site_name" content="Sewa Manage Office Tailor Made Surabaya Jakarta Indonesia | MyCo" />
+
     <style>
         .indented-list li {
             margin-left: 10px;

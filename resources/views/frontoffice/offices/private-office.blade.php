@@ -1,6 +1,18 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+
+    <meta name="title" content="Sewa Private Office Fully Furnished Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('private.office') }}">
+    <meta content="Ruangan kantor yang siap pakai, luas dan fully furnished untuk mendukung kebutuhan perusahaan Anda. Tersedia dalam ukuran ruangan yang kecil dan besar." name="description">
+    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room" name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Private Office Fully Furnished Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('private.office') }}" />
+    <meta property="og:description" content="Ruangan kantor yang siap pakai, luas dan fully furnished untuk mendukung kebutuhan perusahaan Anda. Tersedia dalam ukuran ruangan yang kecil dan besar.">
+    <meta property="og:site_name" content="Sewa Private Office Fully Furnished Surabaya Jakarta Indonesia | MyCo" />
+
     <style>
         .indented-list li {
             margin-left: 10px;

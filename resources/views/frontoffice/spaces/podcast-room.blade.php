@@ -1,6 +1,18 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+
+    <meta name="title" content="Sewa Podcast Room Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('podcast.index') }}">
+    <meta content="Audience sangat ingin mendapatkan konten yang berkualitas dari Anda dan ruang podcast eksklusif kami lengkap dengan peralatan podcast untuk membantu mewujudkannya." name="description">
+    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room" name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Podcast Room Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('podcast.index') }}" />
+    <meta property="og:description" content="Audience sangat ingin mendapatkan konten yang berkualitas dari Anda dan ruang podcast eksklusif kami lengkap dengan peralatan podcast untuk membantu mewujudkannya.">
+    <meta property="og:site_name" content="Sewa Podcast Room Surabaya Jakarta Indonesia | MyCo" />
+
     <style>
         .indented-list li {
             margin-left: 10px;

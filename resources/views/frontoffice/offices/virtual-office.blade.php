@@ -1,6 +1,18 @@
 @extends('frontoffice.layouts.main')
 
 @push('style-alt')
+
+    <meta name="title" content="Sewa Virtual Office Lokasi Strategis Surabaya Jakarta Indonesia | MyCo">
+    <meta name="url" content="{{ route('virtual.office') }}">
+    <meta content="Alamat surat menyurat dengan lokasi strategis untuk perusahaan Anda tanpa perlu memiliki bangunan fisik." name="description">
+    <meta content="coworking space, sewa kantor, office rent, ruang kolaborasi, startup, bisnis umkm, coworking, private office, manage office, virtual office, event space, meeting room, podcast room, studio room" name="keywords">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Sewa Virtual Office Lokasi Strategis Surabaya Jakarta Indonesia | MyCo">
+    <meta property="og:url" content="{{ route('virtual.office') }}" />
+    <meta property="og:description" content="Alamat surat menyurat dengan lokasi strategis untuk perusahaan Anda tanpa perlu memiliki bangunan fisik.">
+    <meta property="og:site_name" content="Sewa Virtual Office Lokasi Strategis Surabaya Jakarta Indonesia | MyCo" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         .indented-list li {

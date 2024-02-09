@@ -817,8 +817,131 @@
         </div>
     </section> --}}
 
-        <section class="pt30 pb30 bg-color-secondary mb-5">
-            <div class="container">
+        <section>
+            <div class="container-fluid bg-color-secondary">
+                <div class="row align-items-center justify-content-center text-center">
+                    <div class="col-md-12">
+                        <div id="de-carousel" class="no-top no-bottom carousel slide carousel-fade shadow-2-strong mb-5"
+                            data-mdb-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-mdb-target="#de-carousel" data-mdb-slide-to="0" class="active"></li>
+                                <li data-mdb-target="#de-carousel" data-mdb-slide-to="1"></li>
+                                <li data-mdb-target="#de-carousel" data-mdb-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Inner -->
+                            <div class="carousel-inner">
+                                <!-- Single item -->
+                                <div class="carousel-item active"
+                                    data-bgimage="url({{ asset('frontoffice/assets/images/location-details-slider/cw/2c.jpg') }})">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <div class="container text-white text-center">
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-md-3">
+                                                        <h1 class="mb-3 wow fadeInUp">Discover New Experience<br
+                                                                class="sm-hide">in Coworking Space
+                                                        </h1>
+                                                        <p class="lead wow fadeInUp" data-wow-delay=".4s"
+                                                            style="font-size:15px;">Myco space
+                                                            provides a place to support your work productivity. We also have
+                                                            several products that you can try such as coworking spaces,
+                                                            private offices, meeting rooms, virtual offices, podcast rooms,
+                                                            event spaces and managed offices. Maximize your work experience
+                                                            with your reliable business partner</p>
+                                                        <div class="spacer-10"></div>
+                                                        <a href="{{ route('cw.index') }}" class="btn-main wow fadeInUp"
+                                                            data-wow-delay=".6s">Explore</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item"
+                                    data-bgimage="url({{ asset('frontoffice/assets/images/location-details-slider/indragiri/4b.jpg') }})">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-center align-items-center h-100 wow f">
+                                            <div class="container text-white text-center">
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-md-3">
+                                                        <h1 class="mb-3 wow fadeInUp">Modern &amp; comfortable space to
+                                                            work</h1>
+                                                        <p class="lead wow fadeInUp" data-wow-delay=".4s"
+                                                            style="font-size:15px;">Myco space
+                                                            provides a place to support your work productivity. We also have
+                                                            several products that you can try such as coworking spaces,
+                                                            private offices, meeting rooms, virtual offices, podcast rooms,
+                                                            event spaces and managed offices. Maximize your work experience
+                                                            with your reliable business partner</p>
+                                                        <div class="spacer-10"></div>
+                                                        <a href="{{ route('indragiri.index') }}"
+                                                            class="btn-main wow fadeInUp" data-wow-delay=".6s">Explore</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item"
+                                    data-bgimage="url({{ asset('frontoffice/assets/images/location-details-slider/trilium/3c.jpg') }})">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <div class="container text-white text-center">
+                                                <div class="row">
+                                                    <div class="col-md-6 offset-md-3">
+                                                        <h1 class="mb-3 wow fadeInUp">The workspace for <br
+                                                                class="sm-hide"> every need
+                                                        </h1>
+                                                        <p class="lead wow fadeInUp" data-wow-delay=".4s"
+                                                            style="font-size:15px;">Myco space
+                                                            provides a place to support your work productivity. We also have
+                                                            several products that you can try such as coworking spaces,
+                                                            private offices, meeting rooms, virtual offices, podcast rooms,
+                                                            event spaces and managed offices. Maximize your work experience
+                                                            with your reliable business partner</p>
+                                                        <div class="spacer-10"></div>
+                                                        <a href="{{ route('trilium.index') }}"
+                                                            class="btn-main wow fadeInUp" data-wow-delay=".6s">Explore</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Inner -->
+
+                            <!-- Controls -->
+                            <a class="carousel-control-prev" href="#de-carousel" role="button" data-mdb-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#de-carousel" role="button" data-mdb-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 pb30">
+                        <div class="col-lg-6 col-md-3 mx-auto">
+                            <h4>Punya Permintaan Khusus?</h4>
+                            <a href="https://api.whatsapp.com/send?phone=6289633299494&text=Hai%20Admin%20MyCo,%20saya%20mau%20tanya%20perihal%20office%20space%20di%20MyCo%0ANama%20:%20%0AEmail%20:%20%0AKebutuhan%20:%20"
+                                class="btn-search-big" target="_blank"><i class="fa fa-whatsapp fa-lg me-2"></i> Whatsapp
+                                Kami !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- <section class="pt30 pb30 bg-color-secondary mb-5">
+            <div class="container pt30 pb30 bg-color-secondary">
                 <div class="row align-items-center justify-content-center text-center">
                     <div class="col-lg-6 col-md-3">
                         <h4>Punya Permintaan Khusus?</h4>
@@ -828,7 +951,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <section id="section-studio-type" class="no-top">
             <div class="container">
@@ -842,7 +965,7 @@
 
                     <div class="col-md-4">
                         <div class="de-image-text">
-                            <a href="#" class="d-text">
+                            <a href="{{ route('podcast.index') }}" class="d-text">
                                 <h3><span class="id-color">01</span> Podcast Room</h3>
                                 <p>Exploring boundless ideas and untold stories within these podcast walls.</p>
                             </a>
@@ -853,7 +976,7 @@
 
                     <div class="col-md-4">
                         <div class="de-image-text">
-                            <a href="#" class="d-text">
+                            <a href="{{ route('private.office') }}" class="d-text">
                                 <h3><span class="id-color">02</span> Private Office</h3>
                                 <p>Where focus meets ambition, and dreams turn into strategies. Welcome to my sanctuary of
                                     productivity.</p>
@@ -865,7 +988,7 @@
 
                     <div class="col-md-4">
                         <div class="de-image-text">
-                            <a href="#" class="d-text">
+                            <a href="{{ route('hot.desk') }}" class="d-text">
                                 <h3><span class="id-color">03</span> Coworking Areas</h3>
                                 <p>Fueling creativity in the dynamic hum of shared ideas. Here, collaboration knows no
                                     boundaries.</p>
@@ -877,7 +1000,7 @@
 
                     <div class="col-md-4">
                         <div class="de-image-text">
-                            <a href="#" class="d-text">
+                            <a href="{{ route('meeting.room') }}" class="d-text">
                                 <h3><span class="id-color">04</span> Meeting Room</h3>
                                 <p>Where ideas converge and decisions take flight. In this room, every moment is a step
                                     towards progress.</p>
@@ -890,7 +1013,7 @@
 
                     <div class="col-md-4">
                         <div class="de-image-text">
-                            <a href="#" class="d-text">
+                            <a href="{{ route('event.index') }}" class="d-text">
                                 <h3><span class="id-color">05</span> Event Space</h3>
                                 <p>Transforming moments into memories, one event at a time. Welcome to a space where
                                     celebrations find their perfect stage.</p>
@@ -902,7 +1025,7 @@
 
                     <div class="col-md-4">
                         <div class="de-image-text">
-                            <a href="#" class="d-text">
+                            <a href="{{ route('studio.index') }}" class="d-text">
                                 <h3><span class="id-color">06</span> Studio Room</h3>
                                 <p>Suitable for content creators or YouTube in producing their videos.</p>
                             </a>

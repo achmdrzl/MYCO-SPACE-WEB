@@ -82,16 +82,16 @@
                             <!-- Slides -->
                             <div class="carousel-inner mb-5">
                                 <div class="carousel-item active">
-                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/cw/2b.jpg') }}" class="d-block w-100"
-                                        alt="" />
+                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/cw/2b.jpg') }}"
+                                        class="d-block w-100" alt="" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/indragiri/1b.jpg') }}" class="d-block w-100"
-                                        alt="" />
+                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/indragiri/1b.jpg') }}"
+                                        class="d-block w-100" alt="" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/trilium/3b.jpg') }}" class="d-block w-100"
-                                        alt="" />
+                                    <img src="{{ asset('frontoffice/assets/images/location-details-slider/trilium/3b.jpg') }}"
+                                        class="d-block w-100" alt="" />
                                 </div>
                             </div>
                             <!-- Slides -->
@@ -114,17 +114,20 @@
                                 <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="0"
                                     class="active" aria-current="true" aria-label="Slide 1" style="width: 100px;">
                                     <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/location-details-slider/cw/2b.jpg') }}" alt="" />
+                                        src="{{ asset('frontoffice/assets/images/location-details-slider/cw/2b.jpg') }}"
+                                        alt="" />
                                 </button>
                                 <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1"
                                     aria-label="Slide 2" style="width: 100px;">
                                     <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/location-details-slider/indragiri/1b.jpg') }}" alt="" />
+                                        src="{{ asset('frontoffice/assets/images/location-details-slider/indragiri/1b.jpg') }}"
+                                        alt="" />
                                 </button>
                                 <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2"
                                     aria-label="Slide 3" style="width: 100px;">
                                     <img class="d-block w-100 img-fluid"
-                                        src="{{ asset('frontoffice/assets/images/location-details-slider/trilium/3b.jpg') }}" alt="" />
+                                        src="{{ asset('frontoffice/assets/images/location-details-slider/trilium/3b.jpg') }}"
+                                        alt="" />
                                 </button>
                             </div>
                             <!-- Thumbnails -->
